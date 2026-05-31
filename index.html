@@ -1,0 +1,387 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Marlon Paz — Network &amp; AI Infrastructure Architect</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,300..800&family=JetBrains+Mono:wght@400;500;700&family=Manrope:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --bg:#080b0c;
+    --bg-2:#0c1113;
+    --panel:#0f1518;
+    --line:#1c2629;
+    --ink:#e7eff0;
+    --ink-dim:#8ba0a3;
+    --ink-faint:#5b6e70;
+    --signal:#43e8c4;
+    --signal-dim:#1d8a76;
+    --amber:#f6b94a;
+    --glow:rgba(67,232,196,.16);
+  }
+  *{margin:0;padding:0;box-sizing:border-box}
+  html{scroll-behavior:smooth}
+  body{
+    background:var(--bg);
+    color:var(--ink);
+    font-family:'Manrope',sans-serif;
+    line-height:1.6;
+    overflow-x:hidden;
+    -webkit-font-smoothing:antialiased;
+  }
+  #net{position:fixed;inset:0;z-index:0;opacity:.55}
+  .grain{position:fixed;inset:0;z-index:1;pointer-events:none;opacity:.04;
+    background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='120' height='120'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='2'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");}
+  .wrap{position:relative;z-index:2;max-width:1080px;margin:0 auto;padding:0 28px}
+
+  /* mono labels */
+  .mono{font-family:'JetBrains Mono',monospace;letter-spacing:.04em}
+  .tag{font-family:'JetBrains Mono',monospace;font-size:.7rem;text-transform:uppercase;
+    letter-spacing:.22em;color:var(--signal-dim)}
+  .tag::before{content:"// "}
+
+  /* ---- HERO ---- */
+  header{min-height:100vh;display:flex;flex-direction:column;justify-content:center;
+    padding:120px 0 80px}
+  .status{display:inline-flex;align-items:center;gap:9px;font-family:'JetBrains Mono',monospace;
+    font-size:.72rem;color:var(--ink-dim);border:1px solid var(--line);border-radius:100px;
+    padding:7px 15px;background:rgba(15,21,24,.6);backdrop-filter:blur(6px);width:fit-content}
+  .dot{width:7px;height:7px;border-radius:50%;background:var(--signal);
+    box-shadow:0 0 10px var(--signal);animation:pulse 2.4s infinite}
+  @keyframes pulse{0%,100%{opacity:1}50%{opacity:.35}}
+  h1{font-family:'Bricolage Grotesque',sans-serif;font-weight:700;
+    font-size:clamp(3rem,9vw,6.6rem);line-height:.94;letter-spacing:-.03em;
+    margin:26px 0 18px}
+  h1 .accent{color:var(--signal)}
+  .role{font-family:'JetBrains Mono',monospace;font-size:clamp(.95rem,2vw,1.25rem);
+    color:var(--ink);letter-spacing:.02em}
+  .role .arr{color:var(--amber)}
+  .meta{display:flex;flex-wrap:wrap;gap:10px 28px;margin-top:30px;color:var(--ink-dim);
+    font-size:.9rem}
+  .meta span{display:flex;align-items:center;gap:8px}
+  .meta svg{width:15px;height:15px;stroke:var(--signal-dim);fill:none;stroke-width:1.6}
+  .lede{max-width:560px;margin-top:34px;color:var(--ink-dim);font-size:1.05rem}
+  .lede b{color:var(--ink);font-weight:600}
+
+  /* reveal */
+  .rv{opacity:0;transform:translateY(22px);transition:opacity .8s cubic-bezier(.2,.7,.2,1),transform .8s cubic-bezier(.2,.7,.2,1)}
+  .rv.in{opacity:1;transform:none}
+
+  /* ---- SECTION ---- */
+  section{padding:78px 0;border-top:1px solid var(--line)}
+  .sec-head{display:flex;align-items:baseline;gap:18px;margin-bottom:42px;flex-wrap:wrap}
+  .sec-head h2{font-family:'Bricolage Grotesque',sans-serif;font-weight:600;
+    font-size:clamp(1.7rem,4vw,2.5rem);letter-spacing:-.02em}
+  .sec-no{font-family:'JetBrains Mono',monospace;font-size:.8rem;color:var(--signal-dim)}
+
+  /* certs */
+  .grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(228px,1fr));gap:14px}
+  .cert{background:var(--panel);border:1px solid var(--line);border-radius:12px;
+    padding:20px;transition:.35s;position:relative;overflow:hidden}
+  .cert::after{content:"";position:absolute;inset:0;background:radial-gradient(120px 80px at 100% 0,var(--glow),transparent);
+    opacity:0;transition:.35s}
+  .cert:hover{border-color:var(--signal-dim);transform:translateY(-3px)}
+  .cert:hover::after{opacity:1}
+  .cert .code{font-family:'JetBrains Mono',monospace;font-size:1.05rem;font-weight:700;
+    color:var(--signal)}
+  .cert .desc{color:var(--ink-dim);font-size:.85rem;margin-top:6px}
+  .cert.flag .code{color:var(--amber)}
+  .cert .pursue{position:absolute;top:14px;right:14px;font-family:'JetBrains Mono',monospace;
+    font-size:.58rem;text-transform:uppercase;letter-spacing:.12em;color:var(--amber);
+    border:1px solid rgba(246,185,74,.4);border-radius:5px;padding:2px 6px}
+
+  /* skills */
+  .skill-cols{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:34px}
+  .skill-cols h3{font-family:'JetBrains Mono',monospace;font-size:.78rem;text-transform:uppercase;
+    letter-spacing:.16em;color:var(--ink-faint);margin-bottom:16px;padding-bottom:10px;
+    border-bottom:1px solid var(--line)}
+  .chips{display:flex;flex-wrap:wrap;gap:8px}
+  .chip{font-family:'JetBrains Mono',monospace;font-size:.78rem;color:var(--ink-dim);
+    border:1px solid var(--line);border-radius:7px;padding:6px 11px;background:var(--bg-2);
+    transition:.25s}
+  .chip:hover{color:var(--signal);border-color:var(--signal-dim)}
+
+  /* timeline */
+  .tl{position:relative;padding-left:30px}
+  .tl::before{content:"";position:absolute;left:5px;top:6px;bottom:6px;width:1px;
+    background:linear-gradient(var(--signal-dim),var(--line))}
+  .job{position:relative;padding-bottom:34px}
+  .job:last-child{padding-bottom:0}
+  .job::before{content:"";position:absolute;left:-29px;top:7px;width:11px;height:11px;
+    border-radius:50%;background:var(--bg);border:2px solid var(--signal-dim)}
+  .job.now::before{background:var(--signal);box-shadow:0 0 12px var(--signal);border-color:var(--signal)}
+  .job .yr{font-family:'JetBrains Mono',monospace;font-size:.72rem;color:var(--signal-dim);
+    letter-spacing:.08em}
+  .job .ttl{font-size:1.12rem;font-weight:700;margin-top:3px}
+  .job .org{color:var(--ink-dim);font-size:.92rem}
+
+  /* repos */
+  .repos{display:grid;grid-template-columns:repeat(auto-fill,minmax(300px,1fr));gap:14px}
+  .repo{display:block;text-decoration:none;background:var(--panel);border:1px solid var(--line);
+    border-radius:12px;padding:20px;transition:.3s}
+  .repo:hover{border-color:var(--signal-dim);background:#101a1d;transform:translateY(-3px)}
+  .repo .rn{font-family:'JetBrains Mono',monospace;color:var(--signal);font-weight:700;
+    font-size:.96rem;display:flex;align-items:center;gap:8px}
+  .repo .rn svg{width:15px;height:15px;stroke:var(--signal-dim);fill:none;stroke-width:1.6;flex:none}
+  .repo .rd{color:var(--ink-dim);font-size:.85rem;margin-top:9px}
+  .repo .rf{display:flex;gap:16px;margin-top:14px;font-family:'JetBrains Mono',monospace;
+    font-size:.72rem;color:var(--ink-faint)}
+  .repo .rf b{color:var(--ink-dim);font-weight:500}
+  .lang{width:9px;height:9px;border-radius:50%;display:inline-block;margin-right:4px}
+
+  /* direction */
+  .dir{background:linear-gradient(135deg,#0d1518,#0a1012);border:1px solid var(--line);
+    border-radius:16px;padding:38px;position:relative;overflow:hidden}
+  .dir::before{content:"";position:absolute;right:-60px;top:-60px;width:240px;height:240px;
+    background:radial-gradient(circle,var(--glow),transparent 70%)}
+  .dir h3{font-family:'Bricolage Grotesque',sans-serif;font-size:1.5rem;font-weight:600;
+    position:relative;margin-bottom:12px}
+  .dir h3 .accent{color:var(--signal)}
+  .dir p{color:var(--ink-dim);position:relative;max-width:640px}
+  .path{display:flex;flex-wrap:wrap;gap:10px;margin-top:24px;position:relative}
+  .path .step{font-family:'JetBrains Mono',monospace;font-size:.74rem;color:var(--ink-dim);
+    border:1px solid var(--line);border-radius:100px;padding:7px 14px;display:flex;
+    align-items:center;gap:8px;background:var(--bg-2)}
+  .path .step b{color:var(--signal)}
+  .path .step.star{border-color:rgba(246,185,74,.4)}
+  .path .step.star b{color:var(--amber)}
+
+  /* footer */
+  footer{border-top:1px solid var(--line);padding:60px 0 70px;text-align:center}
+  .links{display:flex;justify-content:center;gap:14px;flex-wrap:wrap;margin-bottom:26px}
+  .links a{font-family:'JetBrains Mono',monospace;font-size:.85rem;color:var(--ink);
+    text-decoration:none;border:1px solid var(--line);border-radius:10px;padding:12px 20px;
+    display:flex;align-items:center;gap:9px;transition:.3s}
+  .links a:hover{border-color:var(--signal);color:var(--signal);box-shadow:0 0 24px var(--glow)}
+  .links svg{width:17px;height:17px;stroke:currentColor;fill:none;stroke-width:1.6}
+  .foot-note{color:var(--ink-faint);font-family:'JetBrains Mono',monospace;font-size:.72rem}
+  .lang-flags{display:flex;justify-content:center;gap:22px;margin-bottom:30px;color:var(--ink-dim);
+    font-family:'JetBrains Mono',monospace;font-size:.8rem}
+  .lang-flags span b{color:var(--ink)}
+  @media(max-width:560px){header{padding:96px 0 60px}.dir{padding:26px}}
+</style>
+</head>
+<body>
+<canvas id="net"></canvas>
+<div class="grain"></div>
+
+<div class="wrap">
+
+  <!-- HERO -->
+  <header>
+    <div class="status rv"><span class="dot"></span>AVAILABLE FOR AI&nbsp;INFRASTRUCTURE&nbsp;ROLES</div>
+    <h1 class="rv">Marlon<br>De<span class="accent">Paz</span></h1>
+    <div class="role rv">Network Architect <span class="arr">→</span> AI Infrastructure &amp; Governance</div>
+    <div class="meta rv">
+      <span><svg viewBox="0 0 24 24"><path d="M3 7l9 6 9-6M3 7v10h18V7M3 7l9-4 9 4"/></svg>Core42 · G42 Group</span>
+      <span><svg viewBox="0 0 24 24"><path d="M12 21s-7-5.5-7-11a7 7 0 0114 0c0 5.5-7 11-7 11z"/><circle cx="12" cy="10" r="2.5"/></svg>Abu Dhabi, UAE</span>
+      <span><svg viewBox="0 0 24 24"><path d="M4 19V5m0 14h16M8 16l3-5 3 3 4-7"/></svg>IEEE-published author</span>
+    </div>
+    <p class="lede rv">Multi-vendor network engineer turned automation builder, now bridging into
+      <b>AI infrastructure and governance</b>. Deep work across Cisco, Nokia and Juniper —
+      stitched together with Python, Ansible, Terraform and Kubernetes-native observability.</p>
+  </header>
+
+  <!-- CERTIFICATIONS -->
+  <section>
+    <div class="sec-head rv"><span class="sec-no">01</span><h2>Certifications</h2></div>
+    <div class="grid">
+      <div class="cert rv"><div class="code">CCIE</div><div class="desc">Cisco Certified Internetwork Expert</div></div>
+      <div class="cert rv"><div class="code">CKA</div><div class="desc">Certified Kubernetes Administrator</div></div>
+      <div class="cert rv"><div class="code">DevNet Pro</div><div class="desc">Cisco DevNet Professional</div></div>
+      <div class="cert rv"><div class="code">NVIDIA AIOps</div><div class="desc">AIOps Associate</div></div>
+      <div class="cert rv"><div class="code">Isovalent 20×</div><div class="desc">Lab Champion · Cilium / eBPF</div></div>
+      <div class="cert rv flag"><span class="pursue">In&nbsp;progress</span><div class="code">CCIE Automation</div><div class="desc">DevNet track</div></div>
+    </div>
+  </section>
+
+  <!-- SKILLS -->
+  <section>
+    <div class="sec-head rv"><span class="sec-no">02</span><h2>Technical Stack</h2></div>
+    <div class="skill-cols">
+      <div class="rv">
+        <h3>Multi-Vendor Networking</h3>
+        <div class="chips">
+          <span class="chip">Cisco IOS</span><span class="chip">IOS-XR</span><span class="chip">NX-OS</span>
+          <span class="chip">Cisco ACI</span><span class="chip">Nokia SR Linux</span><span class="chip">Nokia SR OS</span>
+          <span class="chip">Juniper</span><span class="chip">Arista</span><span class="chip">EVPN / VXLAN</span>
+        </div>
+      </div>
+      <div class="rv">
+        <h3>Automation &amp; Programmability</h3>
+        <div class="chips">
+          <span class="chip">Python</span><span class="chip">Ansible</span><span class="chip">Terraform</span>
+          <span class="chip">Netmiko</span><span class="chip">NAPALM</span><span class="chip">pyATS / Genie</span>
+          <span class="chip">NETCONF</span><span class="chip">RESTCONF</span><span class="chip">gNMI / Telemetry</span>
+        </div>
+      </div>
+      <div class="rv">
+        <h3>Cloud-Native &amp; Observability</h3>
+        <div class="chips">
+          <span class="chip">Kubernetes</span><span class="chip">Cilium</span><span class="chip">Hubble</span>
+          <span class="chip">eBPF</span><span class="chip">containerlab</span><span class="chip">EVE-NG</span>
+          <span class="chip">Proxmox</span><span class="chip">Zabbix</span><span class="chip">NetBox</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- EXPERIENCE -->
+  <section>
+    <div class="sec-head rv"><span class="sec-no">03</span><h2>Trajectory</h2></div>
+    <div class="tl">
+      <div class="job now rv"><div class="yr">PRESENT</div><div class="ttl">Network Architect</div><div class="org">Core42 — G42 Group · Abu Dhabi</div></div>
+      <div class="job rv"><div class="yr">PRIOR</div><div class="ttl">Network Engineering</div><div class="org">Nokia · Portugal</div></div>
+      <div class="job rv"><div class="yr">PRIOR</div><div class="ttl">Network Engineering</div><div class="org">Citi Bank</div></div>
+      <div class="job rv"><div class="yr">PRIOR</div><div class="ttl">Network Engineering</div><div class="org">Layer2 / Cisco</div></div>
+      <div class="job rv"><div class="yr">PRIOR</div><div class="ttl">Network Engineering</div><div class="org">Tigo</div></div>
+      <div class="job rv"><div class="yr">FOUNDATION</div><div class="ttl">B.Sc. Electrical Engineering</div><div class="org">Academic foundation</div></div>
+    </div>
+  </section>
+
+  <!-- OPEN SOURCE -->
+  <section>
+    <div class="sec-head rv"><span class="sec-no">04</span><h2>Open Source</h2><span class="tag">github.com/mairp</span></div>
+    <div class="repos">
+      <a class="repo rv" href="https://github.com/mairp/CAgenerator" target="_blank" rel="noopener">
+        <div class="rn"><svg viewBox="0 0 24 24"><path d="M7 7h10M7 12h10M7 17h6"/><rect x="3" y="3" width="18" height="18" rx="2"/></svg>CAgenerator</div>
+        <div class="rd">Certificate Authority creation and signer script.</div>
+        <div class="rf"><span><span class="lang" style="background:#89e051"></span>Shell</span><span><b>★</b> 1</span></div>
+      </a>
+      <a class="repo rv" href="https://github.com/mairp/kind-cilium-hubble-cluster" target="_blank" rel="noopener">
+        <div class="rn"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="3"/><circle cx="5" cy="6" r="2"/><circle cx="19" cy="6" r="2"/><circle cx="12" cy="20" r="2"/><path d="M7 7l3 3m7-3l-3 3m-2 6v-3"/></svg>kind-cilium-hubble-cluster</div>
+        <div class="rd">Bootstraps an observable K8s cluster from scratch with kind + Cilium + Hubble.</div>
+        <div class="rf"><span><span class="lang" style="background:#89e051"></span>Shell</span><span><b>★</b> 1</span><span><b>⑂</b> 1</span></div>
+      </a>
+      <a class="repo rv" href="https://github.com/mairp/srl-sros-telemetry-lab" target="_blank" rel="noopener">
+        <div class="rn"><svg viewBox="0 0 24 24"><path d="M4 19V5m0 14h16M8 16l3-5 3 3 4-7"/></svg>srl-sros-telemetry-lab</div>
+        <div class="rd">Interactive streaming telemetry lab — Nokia SR Linux + SR OS.</div>
+        <div class="rf"><span><span class="lang" style="background:#89e051"></span>Shell</span><span><b>⑂</b> fork</span></div>
+      </a>
+      <a class="repo rv" href="https://github.com/mairp/sros-anysec-lab" target="_blank" rel="noopener">
+        <div class="rn"><svg viewBox="0 0 24 24"><path d="M12 3l7 4v5c0 4-3 7-7 9-4-2-7-5-7-9V7z"/></svg>sros-anysec-lab</div>
+        <div class="rd">ANYsec demo on containerlab with Nokia SROS FP5 vSIMs.</div>
+        <div class="rf"><span><span class="lang" style="background:#4f5d95"></span>PHP</span><span><b>★</b> 1</span><span><b>⑂</b> 1</span></div>
+      </a>
+      <a class="repo rv" href="https://github.com/mairp/vrnetlab" target="_blank" rel="noopener">
+        <div class="rn"><svg viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="6" rx="1"/><rect x="3" y="14" width="18" height="6" rx="1"/><path d="M7 7h.01M7 17h.01"/></svg>vrnetlab</div>
+        <div class="rd">Added ISA-MS card support for vr-sros.</div>
+        <div class="rf"><span><span class="lang" style="background:#3572A5"></span>Python</span><span><b>⑂</b> fork</span></div>
+      </a>
+      <a class="repo rv" href="https://github.com/mairp/sros-anysec-macsec-lab" target="_blank" rel="noopener">
+        <div class="rn"><svg viewBox="0 0 24 24"><path d="M12 3l7 4v5c0 4-3 7-7 9-4-2-7-5-7-9V7z"/><path d="M9 12l2 2 4-4"/></svg>sros-anysec-macsec-lab</div>
+        <div class="rd">ANYsec + MACsec lab environment.</div>
+        <div class="rf"><span><span class="lang" style="background:#3572A5"></span>Python</span><span><b>⑂</b> fork</span></div>
+      </a>
+    </div>
+  </section>
+
+  <!-- DIRECTION -->
+  <section>
+    <div class="sec-head rv"><span class="sec-no">05</span><h2>Where I'm Headed</h2></div>
+    <div class="dir rv">
+      <h3>AI Infrastructure &amp; <span class="accent">Governance</span> Architect</h3>
+      <p>Building on a foundation of expert-level networking and automation to move into the layer where
+        AI systems actually run — the infrastructure that schedules, secures and observes them, and the
+        governance frameworks that keep them accountable. The plan favors depth over speed.</p>
+      <div class="path">
+        <span class="step"><b>›</b> CCA Foundations</span>
+        <span class="step"><b>›</b> ISO/IEC 42001 Lead Implementer</span>
+        <span class="step"><b>›</b> NCP-AAI · Agentic AI</span>
+        <span class="step star"><b>★</b> CCA Advanced</span>
+        <span class="step"><b>›</b> IAPP AIGP capstone</span>
+      </div>
+    </div>
+  </section>
+
+</div>
+
+<!-- FOOTER -->
+<footer>
+  <div class="wrap">
+    <div class="lang-flags rv">
+      <span><b>EN</b> English</span><span><b>ES</b> Español</span><span><b>PT</b> Português</span>
+    </div>
+    <div class="links rv">
+      <a href="https://github.com/mairp" target="_blank" rel="noopener">
+        <svg viewBox="0 0 24 24"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 00-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0019 4.77 5.07 5.07 0 0018.91 1S17.73.65 15 2.48a13.38 13.38 0 00-7 0C5.27.65 4.09 1 4.09 1A5.07 5.07 0 004 4.77a5.44 5.44 0 00-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 008 18.13V22"/></svg>
+        github.com/mairp</a>
+      <a href="https://www.linkedin.com/in/marlon-paz-62b02366/" target="_blank" rel="noopener">
+        <svg viewBox="0 0 24 24"><rect x="2" y="2" width="20" height="20" rx="3"/><path d="M7 10v7M7 7v.01M11 17v-4a2 2 0 014 0v4M11 10v7"/></svg>
+        LinkedIn</a>
+      <a href="https://core42.ai" target="_blank" rel="noopener">
+        <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3c2.5 2.5 4 5.6 4 9s-1.5 6.5-4 9c-2.5-2.5-4-5.6-4-9s1.5-6.5 4-9z"/></svg>
+        core42.ai</a>
+    </div>
+    <div class="foot-note">$ whoami → network architect · automation builder · ai-infra in&nbsp;progress</div>
+  </div>
+</footer>
+
+<script>
+/* ---- network topology background ---- */
+(function(){
+  const c=document.getElementById('net'),x=c.getContext('2d');
+  let w,h,nodes,raf;
+  const N=Math.min(64, Math.floor(window.innerWidth/22));
+  function size(){w=c.width=innerWidth;h=c.height=innerHeight;}
+  function init(){
+    size();
+    nodes=Array.from({length:N},()=>({
+      x:Math.random()*w,y:Math.random()*h,
+      vx:(Math.random()-.5)*.25,vy:(Math.random()-.5)*.25,
+      r:Math.random()*1.6+.6
+    }));
+  }
+  function tick(){
+    x.clearRect(0,0,w,h);
+    for(const n of nodes){
+      n.x+=n.vx;n.y+=n.vy;
+      if(n.x<0||n.x>w)n.vx*=-1;
+      if(n.y<0||n.y>h)n.vy*=-1;
+    }
+    for(let i=0;i<nodes.length;i++){
+      for(let j=i+1;j<nodes.length;j++){
+        const a=nodes[i],b=nodes[j],d=Math.hypot(a.x-b.x,a.y-b.y);
+        if(d<140){
+          x.strokeStyle='rgba(67,232,196,'+(1-d/140)*.16+')';
+          x.lineWidth=.6;
+          x.beginPath();x.moveTo(a.x,a.y);x.lineTo(b.x,b.y);x.stroke();
+        }
+      }
+    }
+    for(const n of nodes){
+      x.fillStyle='rgba(67,232,196,.5)';
+      x.beginPath();x.arc(n.x,n.y,n.r,0,7);x.fill();
+    }
+    raf=requestAnimationFrame(tick);
+  }
+  init();tick();
+  addEventListener('resize',()=>{cancelAnimationFrame(raf);init();tick();});
+})();
+
+/* ---- staggered reveal on scroll ---- */
+(function(){
+  const els=[...document.querySelectorAll('.rv')];
+  const io=new IntersectionObserver((es)=>{
+    es.forEach((e,i)=>{
+      if(e.isIntersecting){
+        const grp=[...e.target.parentElement.querySelectorAll('.rv')];
+        const idx=grp.indexOf(e.target);
+        e.target.style.transitionDelay=(Math.max(0,idx)*70)+'ms';
+        e.target.classList.add('in');
+        io.unobserve(e.target);
+      }
+    });
+  },{threshold:.12});
+  els.forEach(el=>io.observe(el));
+  // hero loads immediately, staggered
+  document.querySelectorAll('header .rv').forEach((el,i)=>{
+    el.style.transitionDelay=(i*110)+'ms';
+    requestAnimationFrame(()=>el.classList.add('in'));
+  });
+})();
+</script>
+</body>
+</html>
