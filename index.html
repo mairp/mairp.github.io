@@ -592,8 +592,11 @@
     const ctrl=new AbortController();
     const to=setTimeout(()=>{ timedOut=true; ctrl.abort(); },30000);
     try{
+      // No JSON content-type / custom headers => a CORS "simple" request with NO
+      // preflight OPTIONS (some networks/proxies drop preflights). Body is still
+      // JSON text; the Worker parses it regardless of content-type.
       const res=await fetch(ENDPOINT,{
-        method:'POST',headers:{'Content-Type':'application/json'},
+        method:'POST',
         body:JSON.stringify({turnstileToken:token,messages:history}),
         signal:ctrl.signal
       });
