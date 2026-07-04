@@ -1,0 +1,6 @@
+# This is a PUBLIC repo (GitHub Pages → mairp.ai).
+# The following contain employer-confidential material or internal project ops
+# and must NEVER be committed here. They live in the PRIVATE mairp-digital-twin repo.
+cv/
+roadmap/
+.claude/
