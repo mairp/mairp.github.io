@@ -4,3 +4,11 @@
 cv/
 roadmap/
 .claude/
+
+# Defensive nets — file types that should never be in this public repo.
+# (A local pre-commit hook enforces this too; see /root/portfolio-sync/site-precommit-guard.sh)
+*.pdf
+.env
+*.token
+*.key
+*.pem
