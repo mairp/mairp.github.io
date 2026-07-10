@@ -190,6 +190,9 @@
   .twin-msg.err{align-self:flex-start;background:rgba(246,185,74,.1);border:1px solid rgba(246,185,74,.4);
     color:var(--amber);font-size:.84rem}
   .twin-msg.twin-typing{color:var(--ink-faint);font-family:'JetBrains Mono',monospace}
+  .twin-msg a{color:var(--signal);text-decoration:underline;text-underline-offset:2px;overflow-wrap:anywhere}
+  .twin-msg a:hover{text-decoration-thickness:2px}
+  .twin-msg.user a{color:#04130f;font-weight:600}
   .twin-ts{display:flex;justify-content:center;padding:6px 10px 2px;min-height:0}
   .twin-ts:empty{display:none}
   .twin-disc{padding:2px 16px 9px;font-family:'JetBrains Mono',monospace;font-size:.56rem;
@@ -604,7 +607,26 @@
   function addMsg(kind,text){
     const el=document.createElement('div');
     el.className='twin-msg '+kind;
-    el.textContent=text;                 // textContent — never innerHTML — blocks XSS from model output
+    // Linkify http(s) URLs into clickable anchors. XSS-safe: we NEVER assign model
+    // output to innerHTML — text goes in via text nodes and the URL only ever becomes
+    // an anchor's textContent + a validated http(s) href.
+    const re=/(https?:\/\/[^\s<]+[^\s<.,;:!?)\]}'"])/g;
+    let last=0, m;
+    while((m=re.exec(text))!==null){
+      if(m.index>last) el.appendChild(document.createTextNode(text.slice(last,m.index)));
+      const url=m[0];
+      let ok=false; try{ const u=new URL(url); ok=(u.protocol==='http:'||u.protocol==='https:'); }catch(_){}
+      if(ok){
+        const a=document.createElement('a');
+        a.href=url; a.textContent=url;
+        a.target='_blank'; a.rel='noopener noreferrer';
+        el.appendChild(a);
+      } else {
+        el.appendChild(document.createTextNode(url));
+      }
+      last=m.index+url.length;
+    }
+    if(last<text.length) el.appendChild(document.createTextNode(text.slice(last)));
     log.appendChild(el);
     log.scrollTop=log.scrollHeight;
     return el;
