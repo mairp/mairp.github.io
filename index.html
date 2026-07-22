@@ -5,7 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <!-- Content-Security-Policy: defense-in-depth for a static site that loads Cloudflare
      Turnstile and POSTs to the ask.mairp.ai Worker. Scoped to exactly the origins used.
-     ('unsafe-inline' is required by the single inline <style>/<script> this page ships;
+     ('unsafe-inline' is required by the inline <style> and inline <script>s this page ships;
      moving them to hashed external files would let us drop it — see repo notes.) -->
 <meta http-equiv="Content-Security-Policy" content="default-src 'self'; base-uri 'self'; object-src 'none'; form-action 'self'; frame-src https://challenges.cloudflare.com; script-src 'self' 'unsafe-inline' https://challenges.cloudflare.com; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src https://fonts.gstatic.com; img-src 'self' data:; connect-src 'self' https://ask.mairp.ai https://challenges.cloudflare.com; upgrade-insecure-requests">
 <meta name="referrer" content="strict-origin-when-cross-origin">
@@ -13,8 +13,21 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,300..800&family=JetBrains+Mono:wght@400;500;700&family=Manrope:wght@400;500;600;700&display=swap" rel="stylesheet">
+<script>
+  /* Set the theme before first paint (no flash). Honors a saved choice, else the OS preference. */
+  (function(){
+    try{
+      var t=localStorage.getItem('theme');
+      if(t!=='light'&&t!=='dark'){
+        t=(window.matchMedia&&matchMedia('(prefers-color-scheme: light)').matches)?'light':'dark';
+      }
+      document.documentElement.setAttribute('data-theme',t);
+    }catch(e){ document.documentElement.setAttribute('data-theme','dark'); }
+  })();
+</script>
 <style>
-  :root{
+  :root, [data-theme="dark"]{
+    color-scheme:dark;
     --bg:#080b0c;
     --bg-2:#0c1113;
     --panel:#0f1518;
@@ -26,8 +39,34 @@
     --signal-dim:#1d8a76;
     --amber:#f6b94a;
     --glow:rgba(67,232,196,.16);
+    --glass:rgba(15,21,24,.6);
+    --dir-grad:linear-gradient(135deg,#0d1518,#0a1012);
+    --repo-hover:#101a1d;
+    --on-signal:#04130f;
+  }
+  [data-theme="light"]{
+    color-scheme:light;
+    --bg:#eef3f3;
+    --bg-2:#e4ecec;
+    --panel:#ffffff;
+    --line:#d0dcdc;
+    --ink:#0c1618;
+    --ink-dim:#46585b;
+    --ink-faint:#7a8d90;
+    --signal:#0b8a72;
+    --signal-dim:#0f766e;
+    --amber:#a2620f;
+    --glow:rgba(11,138,114,.14);
+    --glass:rgba(255,255,255,.72);
+    --dir-grad:linear-gradient(135deg,#ffffff,#e9f1f0);
+    --repo-hover:#f2f8f7;
+    --on-signal:#ffffff;
   }
   *{margin:0;padding:0;box-sizing:border-box}
+  /* Animate palette swaps. Class/id transitions (hover, reveal) keep their own timing
+     because those selectors outrank this universal rule in specificity. */
+  *{transition:background-color .35s ease,border-color .35s ease,color .35s ease}
+  @media (prefers-reduced-motion: reduce){ *{transition:none} }
   html{scroll-behavior:smooth}
   body{
     background:var(--bg);
@@ -42,6 +81,20 @@
     background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='120' height='120'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='2'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");}
   .wrap{position:relative;z-index:2;max-width:1080px;margin:0 auto;padding:0 28px}
 
+  /* ---- THEME TOGGLE ---- */
+  #theme-toggle{position:fixed;top:20px;right:20px;z-index:60;width:42px;height:42px;
+    display:flex;align-items:center;justify-content:center;border-radius:50%;cursor:pointer;
+    color:var(--ink-dim);border:1px solid var(--line);background:var(--glass);
+    backdrop-filter:blur(6px);transition:color .3s,border-color .3s,transform .25s}
+  #theme-toggle:hover{color:var(--signal);border-color:var(--signal-dim);transform:translateY(-1px)}
+  #theme-toggle svg{width:19px;height:19px;stroke:currentColor;fill:none;stroke-width:1.7;
+    stroke-linecap:round;stroke-linejoin:round}
+  /* show the sun in dark mode (tap for light), the moon in light mode (tap for dark) */
+  #theme-toggle .moon{display:none}
+  [data-theme="light"] #theme-toggle .sun{display:none}
+  [data-theme="light"] #theme-toggle .moon{display:block}
+  @media(max-width:560px){#theme-toggle{top:14px;right:14px;width:38px;height:38px}}
+
   /* mono labels */
   .mono{font-family:'JetBrains Mono',monospace;letter-spacing:.04em}
   .tag{font-family:'JetBrains Mono',monospace;font-size:.7rem;text-transform:uppercase;
@@ -53,7 +106,7 @@
     padding:120px 0 80px}
   .status{display:inline-flex;align-items:center;gap:9px;font-family:'JetBrains Mono',monospace;
     font-size:.72rem;color:var(--ink-dim);border:1px solid var(--line);border-radius:100px;
-    padding:7px 15px;background:rgba(15,21,24,.6);backdrop-filter:blur(6px);width:fit-content}
+    padding:7px 15px;background:var(--glass);backdrop-filter:blur(6px);width:fit-content}
   .dot{width:7px;height:7px;border-radius:50%;background:var(--signal);
     box-shadow:0 0 10px var(--signal);animation:pulse 2.4s infinite}
   @keyframes pulse{0%,100%{opacity:1}50%{opacity:.35}}
@@ -127,7 +180,7 @@
   .repos{display:grid;grid-template-columns:repeat(auto-fill,minmax(300px,1fr));gap:14px}
   .repo{display:block;text-decoration:none;background:var(--panel);border:1px solid var(--line);
     border-radius:12px;padding:20px;transition:.3s}
-  .repo:hover{border-color:var(--signal-dim);background:#101a1d;transform:translateY(-3px)}
+  .repo:hover{border-color:var(--signal-dim);background:var(--repo-hover);transform:translateY(-3px)}
   .repo .rn{font-family:'JetBrains Mono',monospace;color:var(--signal);font-weight:700;
     font-size:.96rem;display:flex;align-items:center;gap:8px}
   .repo .rn svg{width:15px;height:15px;stroke:var(--signal-dim);fill:none;stroke-width:1.6;flex:none}
@@ -138,7 +191,7 @@
   .lang{width:9px;height:9px;border-radius:50%;display:inline-block;margin-right:4px}
 
   /* direction */
-  .dir{background:linear-gradient(135deg,#0d1518,#0a1012);border:1px solid var(--line);
+  .dir{background:var(--dir-grad);border:1px solid var(--line);
     border-radius:16px;padding:38px;position:relative;overflow:hidden}
   .dir::before{content:"";position:absolute;right:-60px;top:-60px;width:240px;height:240px;
     background:radial-gradient(circle,var(--glow),transparent 70%)}
@@ -170,11 +223,11 @@
 
   /* ---- DIGITAL TWIN CHAT ---- */
   #twin-launch{position:fixed;right:22px;bottom:22px;z-index:50;display:flex;align-items:center;gap:9px;
-    font-family:'JetBrains Mono',monospace;font-size:.8rem;color:var(--bg);background:var(--signal);
+    font-family:'JetBrains Mono',monospace;font-size:.8rem;color:var(--on-signal);background:var(--signal);
     border:none;border-radius:100px;padding:13px 18px;cursor:pointer;box-shadow:0 6px 30px var(--glow);
     transition:transform .25s,box-shadow .25s}
   #twin-launch:hover{transform:translateY(-2px);box-shadow:0 10px 44px var(--glow)}
-  #twin-launch svg{width:16px;height:16px;stroke:var(--bg);fill:none;stroke-width:2}
+  #twin-launch svg{width:16px;height:16px;stroke:var(--on-signal);fill:none;stroke-width:2}
   #twin-panel{position:fixed;right:22px;bottom:22px;z-index:51;width:min(384px,calc(100vw - 24px));
     height:min(564px,calc(100vh - 32px));display:none;flex-direction:column;background:var(--panel);
     border:1px solid var(--line);border-radius:16px;overflow:hidden;box-shadow:0 24px 64px rgba(0,0,0,.55)}
@@ -192,13 +245,13 @@
   .twin-msg{max-width:86%;padding:10px 13px;border-radius:13px;font-size:.88rem;line-height:1.5;
     white-space:pre-wrap;overflow-wrap:anywhere}
   .twin-msg.bot{align-self:flex-start;background:var(--bg-2);border:1px solid var(--line);color:var(--ink)}
-  .twin-msg.user{align-self:flex-end;background:var(--signal-dim);color:#04130f}
+  .twin-msg.user{align-self:flex-end;background:var(--signal-dim);color:var(--on-signal)}
   .twin-msg.err{align-self:flex-start;background:rgba(246,185,74,.1);border:1px solid rgba(246,185,74,.4);
     color:var(--amber);font-size:.84rem}
   .twin-msg.twin-typing{color:var(--ink-faint);font-family:'JetBrains Mono',monospace}
   .twin-msg a{color:var(--signal);text-decoration:underline;text-underline-offset:2px;overflow-wrap:anywhere}
   .twin-msg a:hover{text-decoration-thickness:2px}
-  .twin-msg.user a{color:#04130f;font-weight:600}
+  .twin-msg.user a{color:var(--on-signal);font-weight:600}
   .twin-ts{display:flex;justify-content:center;padding:6px 10px 2px;min-height:0}
   .twin-ts:empty{display:none}
   .twin-disc{padding:2px 16px 9px;font-family:'JetBrains Mono',monospace;font-size:.56rem;
@@ -207,13 +260,17 @@
   .twin-foot textarea{flex:1;resize:none;background:var(--bg-2);border:1px solid var(--line);border-radius:10px;
     color:var(--ink);font-family:'Manrope',sans-serif;font-size:.88rem;padding:9px 11px;line-height:1.4}
   .twin-foot textarea:focus{outline:none;border-color:var(--signal-dim)}
-  .twin-send{background:var(--signal);border:none;border-radius:10px;color:var(--bg);cursor:pointer;
+  .twin-send{background:var(--signal);border:none;border-radius:10px;color:var(--on-signal);cursor:pointer;
     padding:0 15px;height:38px;font-family:'JetBrains Mono',monospace;font-size:.8rem;flex:none}
   .twin-send:disabled{opacity:.45;cursor:not-allowed}
   @media(max-width:560px){#twin-panel{right:8px;bottom:8px}#twin-launch{right:12px;bottom:12px}}
 </style>
 </head>
 <body>
+<button id="theme-toggle" type="button" aria-label="Toggle light/dark theme" title="Toggle theme">
+  <svg class="sun" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="4.2"/><path d="M12 2v2.5M12 19.5V22M4.9 4.9l1.8 1.8M17.3 17.3l1.8 1.8M2 12h2.5M19.5 12H22M4.9 19.1l1.8-1.8M17.3 6.7l1.8-1.8"/></svg>
+  <svg class="moon" viewBox="0 0 24 24" aria-hidden="true"><path d="M20 14.5A8 8 0 1 1 9.5 4a6.3 6.3 0 0 0 10.5 10.5z"/></svg>
+</button>
 <canvas id="net"></canvas>
 <div class="grain"></div>
 
@@ -541,6 +598,17 @@
   const c=document.getElementById('net'),x=c.getContext('2d');
   let w,h,nodes,raf;
   const N=Math.min(64, Math.floor(window.innerWidth/22));
+  // Theme-aware palette: darker + more opaque on light so the mesh stays visible.
+  let RGB='67,232,196', lineA=.16, dotA=.5;
+  function themeColors(){
+    if(document.documentElement.getAttribute('data-theme')==='light'){
+      RGB='15,118,110'; lineA=.30; dotA=.72;   // teal-700, heavier on light
+    }else{
+      RGB='67,232,196'; lineA=.16; dotA=.5;
+    }
+  }
+  themeColors();
+  addEventListener('themechange',themeColors);
   function size(){w=c.width=innerWidth;h=c.height=innerHeight;}
   function init(){
     size();
@@ -561,14 +629,14 @@
       for(let j=i+1;j<nodes.length;j++){
         const a=nodes[i],b=nodes[j],d=Math.hypot(a.x-b.x,a.y-b.y);
         if(d<140){
-          x.strokeStyle='rgba(67,232,196,'+(1-d/140)*.16+')';
+          x.strokeStyle='rgba('+RGB+','+(1-d/140)*lineA+')';
           x.lineWidth=.6;
           x.beginPath();x.moveTo(a.x,a.y);x.lineTo(b.x,b.y);x.stroke();
         }
       }
     }
     for(const n of nodes){
-      x.fillStyle='rgba(67,232,196,.5)';
+      x.fillStyle='rgba('+RGB+','+dotA+')';
       x.beginPath();x.arc(n.x,n.y,n.r,0,7);x.fill();
     }
     raf=requestAnimationFrame(tick);
@@ -734,6 +802,30 @@
   send.addEventListener('click',submit);
   input.addEventListener('keydown',(e)=>{ if(e.key==='Enter' && !e.shiftKey){e.preventDefault();submit();} });
   input.addEventListener('input',()=>{ input.style.height='auto';input.style.height=Math.min(input.scrollHeight,90)+'px'; });
+})();
+
+/* ---- theme toggle ---- */
+(function(){
+  const root=document.documentElement, btn=document.getElementById('theme-toggle');
+  function apply(t){
+    root.setAttribute('data-theme',t);
+    try{localStorage.setItem('theme',t);}catch(e){}
+    btn.setAttribute('aria-label', t==='dark' ? 'Switch to light theme' : 'Switch to dark theme');
+    // let the canvas background recolor itself
+    dispatchEvent(new Event('themechange'));
+  }
+  btn.addEventListener('click',()=>{
+    apply(root.getAttribute('data-theme')==='dark' ? 'light' : 'dark');
+  });
+  // Follow OS changes only while the user hasn't picked a theme explicitly.
+  if(window.matchMedia){
+    matchMedia('(prefers-color-scheme: light)').addEventListener('change',(e)=>{
+      try{ if(localStorage.getItem('theme')) return; }catch(_){}
+      apply(e.matches ? 'light' : 'dark');
+    });
+  }
+  // set the initial aria-label to match the pre-paint theme
+  btn.setAttribute('aria-label', root.getAttribute('data-theme')==='dark' ? 'Switch to light theme' : 'Switch to dark theme');
 })();
 </script>
 </body>
