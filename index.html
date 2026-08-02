@@ -26,41 +26,47 @@
   })();
 </script>
 <style>
+  /* NVIDIA — dark: pure-black ground, bright brand green (#76B900), black text on green. */
   :root, [data-theme="dark"]{
     color-scheme:dark;
-    --bg:#080b0c;
-    --bg-2:#0c1113;
-    --panel:#0f1518;
-    --line:#1c2629;
-    --ink:#e7eff0;
-    --ink-dim:#8ba0a3;
-    --ink-faint:#5b6e70;
-    --signal:#43e8c4;
-    --signal-dim:#1d8a76;
-    --amber:#f6b94a;
-    --glow:rgba(67,232,196,.16);
-    --glass:rgba(15,21,24,.6);
-    --dir-grad:linear-gradient(135deg,#0d1518,#0a1012);
-    --repo-hover:#101a1d;
-    --on-signal:#04130f;
+    /* Ground stays pure black; surfaces climb an even grey ramp (~+9 per step) for
+       quiet tiering — 000 → 12 → 1b → 24 → 2d. */
+    --bg:#000000;
+    --bg-2:#121212;
+    --panel:#1b1b1b;
+    --line:rgba(255,255,255,.13);
+    --ink:#ffffff;
+    --ink-dim:#8f8f8f;
+    --ink-faint:#6a6a6a;
+    --signal:#76b900;        /* NVIDIA green — the single accent */
+    --signal-dim:#5f9400;    /* darker green for lines/hover */
+    --amber:#ffb01f;         /* status: review/attention (keep warm) */
+    --glow:transparent;      /* flat — no ambient glow */
+    --glass:#1b1b1b;         /* solid — no translucency/blur */
+    --dir-grad:#1b1b1b;      /* flat — no gradient */
+    --repo-hover:#242424;
+    --on-signal:#000000;     /* BLACK label text on green, always */
   }
+  /* NVIDIA — light: white ground, darker green (#5C9400) so accent text clears contrast. */
   [data-theme="light"]{
     color-scheme:light;
-    --bg:#eef3f3;
-    --bg-2:#e4ecec;
-    --panel:#ffffff;
-    --line:#d0dcdc;
-    --ink:#0c1618;
-    --ink-dim:#46585b;
-    --ink-faint:#7a8d90;
-    --signal:#0b8a72;
-    --signal-dim:#0f766e;
-    --amber:#a2620f;
-    --glow:rgba(11,138,114,.14);
-    --glass:rgba(255,255,255,.72);
-    --dir-grad:linear-gradient(135deg,#ffffff,#e9f1f0);
-    --repo-hover:#f2f8f7;
-    --on-signal:#ffffff;
+    /* Ground stays pure white; surfaces step down an even grey ramp (~-7 per step)
+       for quiet tiering — fff → f4 → ececec → e4. */
+    --bg:#ffffff;
+    --bg-2:#f4f4f4;
+    --panel:#fbfbfb;
+    --line:rgba(0,0,0,.12);
+    --ink:#000000;
+    --ink-dim:#5a5a5a;
+    --ink-faint:#8a8a8a;
+    --signal:#5c9400;        /* darker green — passes contrast on white */
+    --signal-dim:#4a7500;
+    --amber:#b07000;
+    --glow:transparent;
+    --glass:#fbfbfb;
+    --dir-grad:#fbfbfb;
+    --repo-hover:#ececec;
+    --on-signal:#000000;     /* black label text on green */
   }
   *{margin:0;padding:0;box-sizing:border-box}
   /* Animate palette swaps. Class/id transitions (hover, reveal) keep their own timing
@@ -264,6 +270,68 @@
     padding:0 15px;height:38px;font-family:'JetBrains Mono',monospace;font-size:.8rem;flex:none}
   .twin-send:disabled{opacity:.45;cursor:not-allowed}
   @media(max-width:560px){#twin-panel{right:8px;bottom:8px}#twin-launch{right:12px;bottom:12px}}
+
+  /* ==== NVIDIA FLATTENING LAYER ==================================================
+     Form, not just color: strip rounding, glows, shadows, blur, and gradients from
+     this site's actual components. !important defeats the base rules above. See
+     /root/kanban/nvidia_aesthetics.md. */
+
+  /* Square, opaque surfaces — hairline border replaces elevation. */
+  [data-theme] .cert,
+  [data-theme] .repo,
+  [data-theme] .dir,
+  [data-theme] #twin-panel,
+  [data-theme] .status,
+  [data-theme] #theme-toggle,
+  [data-theme] .twin-foot textarea{
+    border-radius:0 !important;
+    box-shadow:none !important;
+    backdrop-filter:none !important;
+    -webkit-backdrop-filter:none !important;
+  }
+  [data-theme] .dir{background:var(--panel);}
+  [data-theme] .status,[data-theme] #theme-toggle{background:var(--panel);}
+
+  /* Sharpen every remaining rounded/pill element; no soft float. */
+  [data-theme] .chip,
+  [data-theme] .cert .pursue,
+  [data-theme] .path .step,
+  [data-theme] .path .step.star,
+  [data-theme] .links a,
+  [data-theme] #twin-launch,
+  [data-theme] .twin-msg,
+  [data-theme] .twin-send,
+  [data-theme] .cert .pursue,
+  [data-theme] .job::before,
+  [data-theme] .dot,
+  [data-theme] .twin-head .dot{border-radius:0 !important;}
+
+  /* Kill ambient radial glows that painted through ::before/::after. */
+  [data-theme] .cert::after,
+  [data-theme] .dir::before{display:none;}
+
+  /* Green CTAs carry BLACK bold labels — the signature. */
+  [data-theme] #twin-launch,
+  [data-theme] .twin-send{color:var(--on-signal);font-weight:700;}
+  [data-theme] #twin-launch svg{stroke:var(--on-signal);}
+  [data-theme] #twin-launch:hover,
+  [data-theme] .twin-send:hover{background:color-mix(in srgb,var(--signal) 86%,#fff);}
+
+  /* Links / accents: green, no glow on hover — crisp border instead. */
+  [data-theme] .links a:hover{box-shadow:none;border-color:var(--signal);color:var(--signal);}
+  [data-theme] .cert:hover,
+  [data-theme] .repo:hover{border-color:var(--signal);transform:none;}
+
+  /* Pills → flat outlined chips (transparent fill, 1px border). */
+  [data-theme] .chip{background:transparent;}
+  [data-theme] .path .step{background:transparent;}
+
+  /* User chat bubble: green fill needs black text to match the CTA rule. */
+  [data-theme] .twin-msg.user{background:var(--signal);color:var(--on-signal);}
+  [data-theme] .twin-msg.user a{color:var(--on-signal);}
+
+  /* Square scrollbar thumbs to match. */
+  [data-theme] *::-webkit-scrollbar-thumb{border-radius:0;}
 </style>
 </head>
 <body>
@@ -609,13 +677,13 @@
   const c=document.getElementById('net'),x=c.getContext('2d');
   let w,h,nodes,raf;
   const N=Math.min(64, Math.floor(window.innerWidth/22));
-  // Theme-aware palette: darker + more opaque on light so the mesh stays visible.
-  let RGB='67,232,196', lineA=.16, dotA=.5;
+  // Theme-aware palette: NVIDIA green mesh; darker + more opaque on light so it stays visible.
+  let RGB='118,185,0', lineA=.16, dotA=.5;
   function themeColors(){
     if(document.documentElement.getAttribute('data-theme')==='light'){
-      RGB='15,118,110'; lineA=.30; dotA=.72;   // teal-700, heavier on light
+      RGB='92,148,0'; lineA=.28; dotA=.7;   // NVIDIA green (#5C9400), heavier on light
     }else{
-      RGB='67,232,196'; lineA=.16; dotA=.5;
+      RGB='118,185,0'; lineA=.16; dotA=.5;  // NVIDIA green (#76B900) on black
     }
   }
   themeColors();
