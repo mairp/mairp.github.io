@@ -23,29 +23,29 @@
   <!-- accent rule -->
   <rect x="80" y="150" width="64" height="6" fill="#76B900"/>
 
-  <!-- status line -->
-  <text x="80" y="130" class="mono" font-size="24" letter-spacing="6" fill="#8f8f8f">// NETWORK ARCHITECT · DCI/OSS · CLOUD NETWORKING</text>
+  <!-- eyebrow: LEAD with Agentic AI positioning -->
+  <text x="80" y="130" class="mono" font-size="24" letter-spacing="6" fill="#76B900">// AGENTIC AI · AIOPS · AUTONOMOUS NETWORKS</text>
 
   <!-- name -->
   <text x="76" y="290" class="name" font-size="128" letter-spacing="-3" fill="#ffffff">Marlon <tspan fill="#76B900">Paz</tspan></text>
 
-  <!-- role -->
-  <text x="80" y="360" class="mono" font-size="34" fill="#ffffff">Agentic AI · Autonomous Networks · Internet of Agents</text>
+  <!-- role: engineering identity underneath -->
+  <text x="80" y="360" class="mono" font-size="32" fill="#ffffff">Agent Builder · Internet of Agents · Network Architect</text>
 
   <!-- one-liner -->
-  <text x="80" y="430" class="body" font-size="27" fill="#8f8f8f">Production multi-agent systems — AGNTCY · A2A · LangGraph · Agentic RAG,</text>
-  <text x="80" y="468" class="body" font-size="27" fill="#8f8f8f">full OpenTelemetry observability — on 15+ years of expert networking.</text>
+  <text x="80" y="430" class="body" font-size="27" fill="#8f8f8f">Production multi-agent systems on the Internet of Agents — AGNTCY · A2A ·</text>
+  <text x="80" y="468" class="body" font-size="27" fill="#8f8f8f">LangGraph · Agentic RAG, with full OpenTelemetry observability.</text>
 
-  <!-- credential chips -->
-  <g class="mono" font-size="24" fill="#76B900">
-    <rect x="80"  y="520" width="118" height="52" fill="none" stroke="#5f9400" stroke-width="1.5"/>
-    <text x="139" y="553" text-anchor="middle">CCIE</text>
-    <rect x="214" y="520" width="108" height="52" fill="none" stroke="#5f9400" stroke-width="1.5"/>
-    <text x="268" y="553" text-anchor="middle">CKA</text>
-    <rect x="338" y="520" width="230" height="52" fill="none" stroke="#5f9400" stroke-width="1.5"/>
-    <text x="453" y="553" text-anchor="middle">NVIDIA AIOps</text>
-    <rect x="584" y="520" width="250" height="52" fill="none" stroke="#5f9400" stroke-width="1.5"/>
-    <text x="709" y="553" text-anchor="middle">IEEE Author</text>
+  <!-- capability chips (Agentic-AI-led, replacing cert chips) -->
+  <g class="mono" font-size="23" fill="#76B900">
+    <rect x="80"  y="520" width="230" height="52" fill="none" stroke="#5f9400" stroke-width="1.5"/>
+    <text x="195" y="553" text-anchor="middle">Multi-Agent</text>
+    <rect x="326" y="520" width="200" height="52" fill="none" stroke="#5f9400" stroke-width="1.5"/>
+    <text x="426" y="553" text-anchor="middle">Agentic RAG</text>
+    <rect x="542" y="520" width="150" height="52" fill="none" stroke="#5f9400" stroke-width="1.5"/>
+    <text x="617" y="553" text-anchor="middle">AGNTCY</text>
+    <rect x="708" y="520" width="230" height="52" fill="none" stroke="#5f9400" stroke-width="1.5"/>
+    <text x="823" y="553" text-anchor="middle">CCIE · IEEE</text>
   </g>
 
   <!-- domain -->
