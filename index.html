@@ -10,6 +10,65 @@
 <meta http-equiv="Content-Security-Policy" content="default-src 'self'; base-uri 'self'; object-src 'none'; form-action 'self'; frame-src https://challenges.cloudflare.com; script-src 'self' 'unsafe-inline' https://challenges.cloudflare.com; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src https://fonts.gstatic.com; img-src 'self' data:; connect-src 'self' https://ask.mairp.ai https://challenges.cloudflare.com; upgrade-insecure-requests">
 <meta name="referrer" content="strict-origin-when-cross-origin">
 <title>Marlon Paz — Network Architect · DCI/OSS · Cloud Networking</title>
+<meta name="description" content="Marlon Paz — Network Architect (DCI/OSS &amp; Cloud Networking) building production multi-agent systems on the Internet of Agents (AGNTCY · A2A · LangGraph · Agentic RAG) with full OpenTelemetry observability. CCIE · CKA · NVIDIA AIOps · IEEE-published.">
+<meta name="author" content="Marlon Paz">
+<meta name="keywords" content="Marlon Paz, Network Architect, Agentic AI, AIOps, Autonomous Networks, Internet of Agents, AGNTCY, LangGraph, Agentic RAG, RAG, CCIE, Kubernetes, DCI, OSS, Cloud Networking">
+<link rel="canonical" href="https://mairp.ai/">
+<meta name="theme-color" content="#000000" media="(prefers-color-scheme: dark)">
+<meta name="theme-color" content="#ffffff" media="(prefers-color-scheme: light)">
+
+<!-- Icons -->
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<link rel="icon" href="/favicon-32.png" sizes="32x32" type="image/png">
+<link rel="apple-touch-icon" href="/favicon-32.png">
+
+<!-- Open Graph -->
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Marlon Paz">
+<meta property="og:title" content="Marlon Paz — Network Architect · Agentic AI · Autonomous Networks">
+<meta property="og:description" content="Building production multi-agent systems on the Internet of Agents (AGNTCY · A2A · LangGraph · Agentic RAG) with full OpenTelemetry observability — on 15+ years of expert-level networking.">
+<meta property="og:url" content="https://mairp.ai/">
+<meta property="og:image" content="https://mairp.ai/assets/og.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="Marlon Paz — Network Architect · Agentic AI · Autonomous Networks · Internet of Agents">
+
+<!-- Twitter / X card -->
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Marlon Paz — Network Architect · Agentic AI · Autonomous Networks">
+<meta name="twitter:description" content="Production multi-agent systems on the Internet of Agents (AGNTCY · A2A · LangGraph · Agentic RAG) with full OpenTelemetry observability.">
+<meta name="twitter:image" content="https://mairp.ai/assets/og.png">
+<meta name="twitter:image:alt" content="Marlon Paz — Network Architect · Agentic AI · Autonomous Networks">
+
+<!-- Structured data: Person entity (helps search engines link the profile) -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Person",
+  "name": "Marlon Paz",
+  "url": "https://mairp.ai/",
+  "image": "https://mairp.ai/assets/og.png",
+  "jobTitle": "Network Architect — DCI/OSS & Cloud Networking",
+  "worksFor": { "@type": "Organization", "name": "Core42" },
+  "address": { "@type": "PostalAddress", "addressLocality": "Abu Dhabi", "addressCountry": "AE" },
+  "knowsAbout": [
+    "Agentic AI", "AIOps", "Autonomous Networks", "Internet of Agents", "AGNTCY",
+    "Agentic RAG", "Retrieval-Augmented Generation", "Multi-Agent Systems",
+    "Data Center Networking", "EVPN/VXLAN", "Kubernetes", "InfiniBand / RDMA / RoCE",
+    "OpenTelemetry Observability"
+  ],
+  "hasCredential": [
+    { "@type": "EducationalOccupationalCredential", "name": "CCIE" },
+    { "@type": "EducationalOccupationalCredential", "name": "Certified Kubernetes Administrator (CKA)" },
+    { "@type": "EducationalOccupationalCredential", "name": "NVIDIA AI Infrastructure & Operations Associate" }
+  ],
+  "sameAs": [
+    "https://www.linkedin.com/in/marlon-paz-62b02366/",
+    "https://github.com/mairp",
+    "https://www.credly.com/users/marlon-de-paz"
+  ]
+}
+</script>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,300..800&family=JetBrains+Mono:wght@400;500;700&family=Manrope:wght@400;500;600;700&display=swap" rel="stylesheet">
@@ -210,6 +269,8 @@
     border:1px solid var(--line);border-radius:100px;padding:7px 14px;display:flex;
     align-items:center;gap:8px;background:var(--bg-2)}
   .path .step b{color:var(--signal)}
+  a.step{text-decoration:none;transition:.25s}
+  a.step:hover{border-color:var(--signal);color:var(--signal)}
   .path .step.star{border-color:rgba(246,185,74,.4)}
   .path .step.star b{color:var(--amber)}
 
@@ -339,7 +400,7 @@
   <svg class="sun" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="4.2"/><path d="M12 2v2.5M12 19.5V22M4.9 4.9l1.8 1.8M17.3 17.3l1.8 1.8M2 12h2.5M19.5 12H22M4.9 19.1l1.8-1.8M17.3 6.7l1.8-1.8"/></svg>
   <svg class="moon" viewBox="0 0 24 24" aria-hidden="true"><path d="M20 14.5A8 8 0 1 1 9.5 4a6.3 6.3 0 0 0 10.5 10.5z"/></svg>
 </button>
-<canvas id="net"></canvas>
+<canvas id="net" aria-hidden="true"></canvas>
 <div class="grain"></div>
 
 <div class="wrap">
@@ -477,6 +538,21 @@
         <span class="chip">NATS</span><span class="chip">OpenTelemetry</span><span class="chip">ClickHouse</span>
         <span class="chip">Grafana</span><span class="chip">FastAPI</span><span class="chip">LiteLLM</span>
         <span class="chip">React 19</span><span class="chip">Kubernetes</span><span class="chip">Python 3.13</span>
+      </div>
+    </div>
+    <div class="dir rv" style="margin-top:20px">
+      <h3>Agentic <span class="accent">RAG</span> &amp; Agent Memory</h3>
+      <p>Giving those agents a memory: a local, GPU-accelerated <b>Retrieval-Augmented Generation</b> layer where
+        the agent itself decides what to retrieve, re-queries, and grounds its answers in cited sources — a hierarchical,
+        three-tier <b>semantic memory</b> over local GGUF <b>embeddings</b> and <b>vector search</b>, served to the fleet
+        through an <b>MCP</b> gateway. Runs on-prem on an Intel Arc iGPU (~19× query speedup via Vulkan), fail-open by design.</p>
+      <div class="chips" style="margin-top:24px;position:relative">
+        <span class="chip">Agentic RAG</span><span class="chip">Vector Search</span><span class="chip">Embeddings</span>
+        <span class="chip">Semantic Memory</span><span class="chip">MCP</span><span class="chip">Local GGUF</span>
+        <span class="chip">Hierarchical Memory</span><span class="chip">On-Prem GPU</span>
+      </div>
+      <div class="path" style="margin-top:20px">
+        <a class="step" href="https://github.com/mairp/qmd-memory-stack" target="_blank" rel="noopener"><b>›</b>&nbsp;qmd-memory-stack ↗</a>
       </div>
     </div>
   </section>
@@ -727,8 +803,23 @@
     }
     raf=requestAnimationFrame(tick);
   }
-  init();tick();
-  addEventListener('resize',()=>{cancelAnimationFrame(raf);init();tick();});
+  // Respect reduced-motion: paint one static frame, no rAF loop.
+  const reduce = window.matchMedia && matchMedia('(prefers-reduced-motion: reduce)').matches;
+  function staticFrame(){
+    x.clearRect(0,0,w,h);
+    for(let i=0;i<nodes.length;i++)for(let j=i+1;j<nodes.length;j++){
+      const a=nodes[i],b=nodes[j],d=Math.hypot(a.x-b.x,a.y-b.y);
+      if(d<140){x.strokeStyle='rgba('+RGB+','+(1-d/140)*lineA+')';x.lineWidth=.6;
+        x.beginPath();x.moveTo(a.x,a.y);x.lineTo(b.x,b.y);x.stroke();}
+    }
+    for(const n of nodes){x.fillStyle='rgba('+RGB+','+dotA+')';x.beginPath();x.arc(n.x,n.y,n.r,0,7);x.fill();}
+  }
+  init();
+  if(reduce){ staticFrame(); } else { tick(); }
+  addEventListener('resize',()=>{
+    cancelAnimationFrame(raf);init();
+    if(reduce){ staticFrame(); } else { tick(); }
+  });
 })();
 
 /* ---- staggered reveal on scroll ---- */
