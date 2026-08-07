@@ -528,6 +528,38 @@
   <section>
     <div class="sec-head rv"><span class="sec-no">★</span><h2>Building Now</h2><span class="tag">Internet of Agents</span></div>
     <div class="dir rv">
+      <h3>Tokenomics <span class="accent">Observability</span></h3>
+      <p>Making agent spend legible: end-to-end <b>token &amp; cost telemetry</b> for a multi-agent fleet — every LLM call
+        instrumented through <b>LiteLLM</b> and <b>OpenTelemetry</b>, streamed to <b>Prometheus</b>, <b>Loki</b> and
+        <b>Tempo</b>, and surfaced on <b>Grafana</b> dashboards that break down tokens, latency and dollars per agent,
+        per model and per task. Local-GPU aware (Intel iGPU/NPU + RTX&nbsp;3090 eGPU), with Telegram budget alerts.</p>
+      <div class="chips" style="margin-top:24px;position:relative">
+        <span class="chip">Tokenomics</span><span class="chip">OpenTelemetry</span><span class="chip">Prometheus</span>
+        <span class="chip">Grafana</span><span class="chip">Loki</span><span class="chip">Tempo</span>
+        <span class="chip">LiteLLM</span><span class="chip">Cost Tracking</span>
+      </div>
+      <div class="path" style="margin-top:20px">
+        <a class="step" href="https://youtu.be/Qq-M7x4rsoc?si=cKc1MO2FAvudL8Dl" target="_blank" rel="noopener"><b>▶</b>&nbsp;Watch the walkthrough ↗</a>
+        <a class="step" href="https://github.com/mairp/agent-observability-stack" target="_blank" rel="noopener"><b>›</b>&nbsp;agent-observability-stack ↗</a>
+      </div>
+    </div>
+    <div class="dir rv" style="margin-top:20px">
+      <h3>AI <span class="accent">Governance</span> Control Plane</h3>
+      <p>A vendor-neutral <b>AI governance</b> platform for continuous model &amp; agent inventory, human oversight,
+        control orchestration, and evidence custody across deployment boundaries. Built on a strict invariant —
+        a UI, event or dashboard is never governance authority: consequential changes require current human
+        authority, <b>separation-of-duties</b> checks, an atomic canonical-state-and-audit commit, and retained
+        evidence. Hexagonal domain core with replaceable ports over a <b>PostgreSQL</b> canonical store, a
+        <b>hash-chained audit ledger</b>, a content-addressed evidence store, an <b>OPA</b> policy decision point,
+        and event-driven projectors over <b>NATS JetStream</b>.</p>
+      <div class="chips" style="margin-top:24px;position:relative">
+        <span class="chip">AI Governance</span><span class="chip">RBAC / ABAC / SoD</span><span class="chip">OPA Policy</span>
+        <span class="chip">Hash-Chained Audit</span><span class="chip">Evidence Custody</span><span class="chip">Compliance Mapping</span>
+        <span class="chip">PostgreSQL</span><span class="chip">NATS JetStream</span><span class="chip">TypeScript</span>
+        <span class="chip">Node.js 22</span><span class="chip">Kubernetes</span>
+      </div>
+    </div>
+    <div class="dir rv" style="margin-top:20px">
       <h3>Production <span class="accent">Multi-Agent Systems</span></h3>
       <p>Designing and operating teams of autonomous AI agents that plan, build, review and act — orchestrated
         with <b>LangGraph</b> over the <b>AGNTCY</b> Internet-of-Agents stack (A2A protocol, SLIM transport, NATS),
