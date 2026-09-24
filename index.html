@@ -304,6 +304,13 @@
     .loop.l3 .stg:not(:last-child)::after{content:"↓";right:auto;left:50%;top:auto;bottom:-20px;transform:translateX(-50%)}}
   @media (prefers-reduced-motion: reduce){.loop .stg{animation:none}}
 
+  /* in-page demo player */
+  .vplay{display:block;width:100%;aspect-ratio:16/9;margin-top:24px;border-radius:14px;
+    border:1px solid var(--line);background:#000;position:relative}
+  .dir h3 a{color:inherit;text-decoration:none}
+  .dir h3 a .gh{font-family:'JetBrains Mono',monospace;font-size:.8rem;color:var(--ink-faint);
+    margin-left:10px;vertical-align:middle;transition:.25s}
+  .dir h3 a:hover .gh{color:var(--signal)}
   /* video preview thumbnail */
   .vid{display:block;position:relative;margin-top:24px;border-radius:14px;overflow:hidden;
     border:1px solid var(--line);aspect-ratio:16/9;background:var(--bg-2);transition:.25s}
@@ -576,7 +583,28 @@
   <section>
     <div class="sec-head rv"><span class="sec-no">★</span><h2>Building Now</h2><span class="tag">Internet of Agents</span></div>
     <div class="dir rv">
-      <h3>Agentic <span class="accent">NetOps</span> — Intent to Fabric</h3>
+      <h3><a href="https://github.com/mairp/agent-observability-stack" target="_blank" rel="noopener">Tokenomics <span class="accent">Observability</span><span class="gh">github ↗</span></a></h3>
+      <p>Making agent spend legible: end-to-end <b>token &amp; cost telemetry</b> for a multi-agent fleet — every LLM call
+        instrumented through <b>LiteLLM</b> and <b>OpenTelemetry</b>, streamed to <b>Prometheus</b>, <b>Loki</b> and
+        <b>Tempo</b>, and surfaced on <b>Grafana</b> dashboards that break down tokens, latency and dollars per agent,
+        per model and per task. Local-GPU aware (Intel iGPU/NPU + RTX&nbsp;3090 eGPU), with Telegram budget alerts.</p>
+      <div class="chips" style="margin-top:24px;position:relative">
+        <span class="chip">Tokenomics</span><span class="chip">OpenTelemetry</span><span class="chip">Prometheus</span>
+        <span class="chip">Grafana</span><span class="chip">Loki</span><span class="chip">Tempo</span>
+        <span class="chip">LiteLLM</span><span class="chip">Cost Tracking</span>
+      </div>
+      <a class="vid" href="https://youtu.be/Qq-M7x4rsoc?si=cKc1MO2FAvudL8Dl" target="_blank" rel="noopener" aria-label="Watch the Tokenomics Observability walkthrough">
+        <img src="assets/tokenomics-video-thumb.jpg" alt="Tokenomics Observability walkthrough video" loading="lazy">
+        <span class="play"><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg></span>
+        <span class="cap">▶ Watch the walkthrough</span>
+      </a>
+      <p class="vid-meta">Agentic Observability Stack · 13 views on YouTube</p>
+      <div class="path" style="margin-top:20px">
+        <a class="step" href="https://github.com/mairp/agent-observability-stack" target="_blank" rel="noopener"><b>›</b>&nbsp;agent-observability-stack ↗</a>
+      </div>
+    </div>
+    <div class="dir rv" style="margin-top:20px">
+      <h3><a href="https://github.com/mairp/agentic-netops" target="_blank" rel="noopener">Agentic <span class="accent">NetOps</span> — Intent to Fabric<span class="gh">github ↗</span></a></h3>
       <p>Autonomous network operations where the agents <i>are</i> the control plane: state intent in plain language
         and an <b>AGNTCY</b> multi-agent tier (a <b>LangGraph</b> supervisor with mapper, allocator and deployer agents over
         <b>A2A</b>/<b>SLIM</b>) decomposes it, allocates identifiers and submits declarative resources. <b>Kubernetes</b>
@@ -595,6 +623,10 @@
         <div><b>2·2·4</b>spines · leaves · clients</div>
         <div><b>0</b>unverified “success” reports</div>
       </div>
+      <video class="vplay" controls preload="none" playsinline poster="assets/agentic-netops-demo-thumb.jpg" aria-label="agentic-netops intent-tier demo">
+        <source src="assets/agentic-netops-demo.mp4" type="video/mp4">
+      </video>
+      <p class="vid-meta">Demo · intent tier end to end — vlan, ip-vrf and a stretched mac-vrf provisioned from plain language, then proven with kubectl and on the SONiC leaves · 6½ min</p>
       <div class="chips" style="margin-top:24px;position:relative">
         <span class="chip">Intent-Based Networking</span><span class="chip">AGNTCY</span><span class="chip">LangGraph</span>
         <span class="chip">A2A / SLIM</span><span class="chip">Kubernetes Operators</span><span class="chip">Go</span>
@@ -603,12 +635,11 @@
       </div>
       <div class="path" style="margin-top:20px">
         <a class="step star" href="https://github.com/mairp/agentic-netops" target="_blank" rel="noopener"><b>★</b>&nbsp;agentic-netops ↗</a>
-        <a class="step" href="https://github.com/mairp/agentic-netops#demo" target="_blank" rel="noopener"><b>▶</b>&nbsp;6½-min demo ↗</a>
         <a class="step" href="https://github.com/mairp/agentic-netops/blob/main/TUTORIAL.md" target="_blank" rel="noopener"><b>›</b>&nbsp;tutorial ↗</a>
       </div>
     </div>
     <div class="dir rv" style="margin-top:20px">
-      <h3>Mixture <span class="accent">of Loops</span></h3>
+      <h3><a href="https://github.com/mairp/mixture-of-loops" target="_blank" rel="noopener">Mixture <span class="accent">of Loops</span><span class="gh">github ↗</span></a></h3>
       <p>A spec compiler for autonomous delivery: one <b>Agent Skills</b> package, shared by <b>Claude Code</b>, <b>Codex</b>,
         <b>pi</b>, <b>prime</b> and dsh, that reads <b>GitHub Spec Kit</b> features holistically (spec, plan, tasks, verification
         declarations, dependencies, release gates) and derives a <b>provenance-bound launch contract</b> plus an executable,
@@ -636,7 +667,7 @@
       </div>
     </div>
     <div class="dir rv" style="margin-top:20px">
-      <h3><span class="accent">Specstride</span> — From Specs to Tested Code</h3>
+      <h3><a href="https://github.com/mairp/specstride" target="_blank" rel="noopener"><span class="accent">Specstride</span> — From Specs to Tested Code<span class="gh">github ↗</span></a></h3>
       <p>The engine those pipelines drive: an autonomous coding orchestrator that takes a Spec Kit feature phase by phase, where
         <i>nothing advances until an LLM critic approves it</i> against the acceptance criteria and the real code. Stuck phases get a
         <b>diagnostician</b> that reads the full rejection history and an <b>accelerator</b> that retries only the failing criteria.
@@ -660,27 +691,6 @@
       </div>
       <div class="path" style="margin-top:20px">
         <a class="step" href="https://github.com/mairp/specstride" target="_blank" rel="noopener"><b>›</b>&nbsp;specstride ↗</a>
-      </div>
-    </div>
-    <div class="dir rv" style="margin-top:20px">
-      <h3>Tokenomics <span class="accent">Observability</span></h3>
-      <p>Making agent spend legible: end-to-end <b>token &amp; cost telemetry</b> for a multi-agent fleet — every LLM call
-        instrumented through <b>LiteLLM</b> and <b>OpenTelemetry</b>, streamed to <b>Prometheus</b>, <b>Loki</b> and
-        <b>Tempo</b>, and surfaced on <b>Grafana</b> dashboards that break down tokens, latency and dollars per agent,
-        per model and per task. Local-GPU aware (Intel iGPU/NPU + RTX&nbsp;3090 eGPU), with Telegram budget alerts.</p>
-      <div class="chips" style="margin-top:24px;position:relative">
-        <span class="chip">Tokenomics</span><span class="chip">OpenTelemetry</span><span class="chip">Prometheus</span>
-        <span class="chip">Grafana</span><span class="chip">Loki</span><span class="chip">Tempo</span>
-        <span class="chip">LiteLLM</span><span class="chip">Cost Tracking</span>
-      </div>
-      <a class="vid" href="https://youtu.be/Qq-M7x4rsoc?si=cKc1MO2FAvudL8Dl" target="_blank" rel="noopener" aria-label="Watch the Tokenomics Observability walkthrough">
-        <img src="assets/tokenomics-video-thumb.jpg" alt="Tokenomics Observability walkthrough video" loading="lazy">
-        <span class="play"><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg></span>
-        <span class="cap">▶ Watch the walkthrough</span>
-      </a>
-      <p class="vid-meta">Agentic Observability Stack · 13 views on YouTube</p>
-      <div class="path" style="margin-top:20px">
-        <a class="step" href="https://github.com/mairp/agent-observability-stack" target="_blank" rel="noopener"><b>›</b>&nbsp;agent-observability-stack ↗</a>
       </div>
     </div>
     <div class="dir rv" style="margin-top:20px">
@@ -711,9 +721,12 @@
         <span class="chip">Grafana</span><span class="chip">FastAPI</span><span class="chip">LiteLLM</span>
         <span class="chip">React 19</span><span class="chip">Kubernetes</span><span class="chip">Python 3.13</span>
       </div>
+      <div class="path" style="margin-top:20px">
+        <a class="step" href="https://github.com/mairp/coffeeAgntcy" target="_blank" rel="noopener"><b>›</b>&nbsp;coffeeAgntcy · AGNTCY reference ↗</a>
+      </div>
     </div>
     <div class="dir rv" style="margin-top:20px">
-      <h3>Agentic <span class="accent">RAG</span> &amp; Agent Memory</h3>
+      <h3><a href="https://github.com/mairp/qmd-memory-stack" target="_blank" rel="noopener">Agentic <span class="accent">RAG</span> &amp; Agent Memory<span class="gh">github ↗</span></a></h3>
       <p>Giving those agents a memory: a local, GPU-accelerated <b>Retrieval-Augmented Generation</b> layer where
         the agent itself decides what to retrieve, re-queries, and grounds its answers in cited sources — a hierarchical,
         three-tier <b>semantic memory</b> over local GGUF <b>embeddings</b> and <b>vector search</b>, served to the fleet
@@ -725,6 +738,7 @@
       </div>
       <div class="path" style="margin-top:20px">
         <a class="step" href="https://github.com/mairp/qmd-memory-stack" target="_blank" rel="noopener"><b>›</b>&nbsp;qmd-memory-stack ↗</a>
+        <a class="step" href="https://github.com/mairp/qmd-gateway" target="_blank" rel="noopener"><b>›</b>&nbsp;qmd-gateway ↗</a>
       </div>
     </div>
   </section>
