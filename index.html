@@ -299,6 +299,9 @@
   @media(max-width:460px){.loop{grid-template-columns:1fr;gap:22px}
     .loop .stg:not(:last-child)::after{content:"↓";right:auto;left:50%;top:auto;bottom:-20px;transform:translateX(-50%)}
     .loop .stg:nth-child(2)::after{content:"↓"}}
+  .loop.l3{grid-template-columns:repeat(3,1fr)}
+  @media(max-width:760px){.loop.l3{grid-template-columns:1fr;gap:22px}
+    .loop.l3 .stg:not(:last-child)::after{content:"↓";right:auto;left:50%;top:auto;bottom:-20px;transform:translateX(-50%)}}
   @media (prefers-reduced-motion: reduce){.loop .stg{animation:none}}
 
   /* video preview thumbnail */
@@ -602,6 +605,61 @@
         <a class="step star" href="https://github.com/mairp/agentic-netops" target="_blank" rel="noopener"><b>★</b>&nbsp;agentic-netops ↗</a>
         <a class="step" href="https://github.com/mairp/agentic-netops#demo" target="_blank" rel="noopener"><b>▶</b>&nbsp;6½-min demo ↗</a>
         <a class="step" href="https://github.com/mairp/agentic-netops/blob/main/TUTORIAL.md" target="_blank" rel="noopener"><b>›</b>&nbsp;tutorial ↗</a>
+      </div>
+    </div>
+    <div class="dir rv" style="margin-top:20px">
+      <h3>Mixture <span class="accent">of Loops</span></h3>
+      <p>A spec compiler for autonomous delivery: one <b>Agent Skills</b> package, shared by <b>Claude Code</b>, <b>Codex</b>,
+        <b>pi</b>, <b>prime</b> and dsh, that reads <b>GitHub Spec Kit</b> features holistically (spec, plan, tasks, verification
+        declarations, dependencies, release gates) and derives a <b>provenance-bound launch contract</b> plus an executable,
+        unattended pipeline. Every source is pinned by SHA-256, so editing a spec after derivation blocks the launch until the
+        contract is regenerated. Silence is never consent to execute: generation is the default, and a run is started detached and
+        supervised from its own telemetry, relaunching only on stops its records classify as transient.</p>
+      <div class="loop" aria-label="Pipeline: Spec Kit artifacts, launch contract, validate and render, supervised run">
+        <div class="stg"><div class="k">01 · Inventory</div><div class="t">Spec Kit artifacts</div><div class="d">spec · plan · tasks · gates, one or many features</div></div>
+        <div class="stg"><div class="k">02 · Contract</div><div class="t">Provenance-bound</div><div class="d">SHA-256 sources, stage graph, evidence each step must produce</div></div>
+        <div class="stg"><div class="k">03 · Gate</div><div class="t">Validate → render</div><div class="d">blockers refuse (exit 20/23); content-addressed launcher, bash -n, dry-run</div></div>
+        <div class="stg"><div class="k">04 · Run</div><div class="t">Detached + supervised</div><div class="d">lock, re-hash, skip satisfied stages, bounded transient relaunch</div></div>
+      </div>
+      <div class="stats">
+        <div><b>5</b>harnesses · one canonical skill</div>
+        <div><b>3</b>modes · generate · run · auto</div>
+        <div><b>0</b>runs without an explicit ask</div>
+      </div>
+      <div class="chips" style="margin-top:24px;position:relative">
+        <span class="chip">Spec-Driven Development</span><span class="chip">Agent Skills</span><span class="chip">Spec Kit</span>
+        <span class="chip">Provenance</span><span class="chip">Launch Contracts</span><span class="chip">Claude Code</span>
+        <span class="chip">Codex</span><span class="chip">Python</span><span class="chip">Bash</span>
+      </div>
+      <div class="path" style="margin-top:20px">
+        <a class="step" href="https://github.com/mairp/mixture-of-loops" target="_blank" rel="noopener"><b>›</b>&nbsp;mixture-of-loops ↗</a>
+      </div>
+    </div>
+    <div class="dir rv" style="margin-top:20px">
+      <h3><span class="accent">Specstride</span> — From Specs to Tested Code</h3>
+      <p>The engine those pipelines drive: an autonomous coding orchestrator that takes a Spec Kit feature phase by phase, where
+        <i>nothing advances until an LLM critic approves it</i> against the acceptance criteria and the real code. Stuck phases get a
+        <b>diagnostician</b> that reads the full rejection history and an <b>accelerator</b> that retries only the failing criteria.
+        An opt-in outer loop learns per-phase budgets from its own <b>OpenTelemetry</b> and JSONL events, evaluates each change
+        against its baseline, and <b>auto-reverts</b> on any guardrail breach. The agents stay stateless; what improves is how the
+        loop drives them, and the critic's independence is locked by a test.</p>
+      <div class="loop l3" aria-label="Three nested loops: pass, gated phase, learning">
+        <div class="stg"><div class="k">Inner · pass loop</div><div class="t">Fresh stateless session</div><div class="d">works until the phase's evidence file exists; only disk carries over</div></div>
+        <div class="stg"><div class="k">Middle · gated phase</div><div class="t">Proposer → critic</div><div class="d">approve or retry; diagnostician + narrowed accelerator when stuck</div></div>
+        <div class="stg"><div class="k">Outer · learning</div><div class="t">Observe → apply → evaluate</div><div class="d">bounded ±50% steps, helped / neutral / regressed, auto-revert + quarantine</div></div>
+      </div>
+      <div class="stats">
+        <div><b>3</b>nested loops, one self-tuning</div>
+        <div><b>2</b>tunable knobs · the critic is never one</div>
+        <div><b>0</b>third-party deps · stdlib only</div>
+      </div>
+      <div class="chips" style="margin-top:24px;position:relative">
+        <span class="chip">Autonomous Coding</span><span class="chip">Ralph Loop</span><span class="chip">LLM-as-Critic</span>
+        <span class="chip">Spec-Driven Development</span><span class="chip">Self-Tuning</span><span class="chip">OpenTelemetry</span>
+        <span class="chip">Python 3.13</span><span class="chip">Bash</span>
+      </div>
+      <div class="path" style="margin-top:20px">
+        <a class="step" href="https://github.com/mairp/specstride" target="_blank" rel="noopener"><b>›</b>&nbsp;specstride ↗</a>
       </div>
     </div>
     <div class="dir rv" style="margin-top:20px">
