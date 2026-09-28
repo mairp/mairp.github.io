@@ -1098,6 +1098,15 @@
   const send=document.getElementById('twin-send');
   const history=[];
   let tsId=null, tsToken=null, tsLoading=false, greeted=false, busy=false;
+  // Conversation id for tracing (groups a chat's turns). Kept in sessionStorage so a reload
+  // continues the same conversation; sent in the BODY (no custom header => still no preflight).
+  const sessionId=(()=>{
+    try{
+      let v=sessionStorage.getItem('twin-session-id');
+      if(!v){ v=crypto.randomUUID(); sessionStorage.setItem('twin-session-id',v); }
+      return v;
+    }catch(e){ return (crypto.randomUUID && crypto.randomUUID()) || ''; }
+  })();
 
   function addMsg(kind,text){
     const el=document.createElement('div');
@@ -1186,7 +1195,7 @@
       // JSON text; the Worker parses it regardless of content-type.
       const res=await fetch(ENDPOINT,{
         method:'POST',
-        body:JSON.stringify({turnstileToken:token,messages:history}),
+        body:JSON.stringify({turnstileToken:token,sessionId:sessionId,messages:history}),
         signal:ctrl.signal
       });
       clearTimeout(to);
