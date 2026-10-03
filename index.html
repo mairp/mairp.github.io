@@ -9,10 +9,10 @@
      moving them to hashed external files would let us drop it — see repo notes.) -->
 <meta http-equiv="Content-Security-Policy" content="default-src 'self'; base-uri 'self'; object-src 'none'; form-action 'self'; frame-src https://challenges.cloudflare.com; script-src 'self' 'unsafe-inline' https://challenges.cloudflare.com; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src https://fonts.gstatic.com; img-src 'self' data:; connect-src 'self' https://ask.mairp.ai https://challenges.cloudflare.com; upgrade-insecure-requests">
 <meta name="referrer" content="strict-origin-when-cross-origin">
-<title>Marlon Paz — Network Architect · DCI/OSS · Cloud Networking</title>
-<meta name="description" content="Marlon Paz — Network Architect (DCI/OSS &amp; Cloud Networking) building production multi-agent systems on the Internet of Agents (AGNTCY · A2A · LangGraph · Agentic RAG) with full OpenTelemetry observability. CCIE · CKA · NVIDIA AIOps · IEEE-published.">
+<title>Marlon Paz — agents that operate networks</title>
+<meta name="description" content="I build agents that operate networks, and the harnesses that keep agents honest. Network architect at Core42 in Abu Dhabi; two peer-reviewed papers on autonomous EVPN fabrics.">
 <meta name="author" content="Marlon Paz">
-<meta name="keywords" content="Marlon Paz, Network Architect, Agentic AI, AIOps, Autonomous Cloud Infrastructure, Autonomous Networks, Cloud Infrastructure, Kubernetes, Event-Driven Automation, Observability, Internet of Agents, AGNTCY, LangGraph, Agentic RAG, RAG, CCIE, CKA, DCI, OSS, Cloud Networking">
+<meta name="keywords" content="Marlon Paz, network architect, agentic network operations, EVPN/VXLAN, SONiC, Nokia SR Linux, Kubernetes operators, gNMI, AGNTCY, LangGraph, Spec Kit, specstride, OpenTelemetry">
 <link rel="canonical" href="https://mairp.ai/">
 <meta name="theme-color" content="#000000" media="(prefers-color-scheme: dark)">
 <meta name="theme-color" content="#ffffff" media="(prefers-color-scheme: light)">
@@ -25,20 +25,20 @@
 <!-- Open Graph -->
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="Marlon Paz">
-<meta property="og:title" content="Marlon Paz — Network Architect · Agentic AI · Autonomous Cloud & Network Infrastructure">
-<meta property="og:description" content="Building production multi-agent systems on the Internet of Agents (AGNTCY · A2A · LangGraph · Agentic RAG) with full OpenTelemetry observability — on 15+ years of expert-level networking.">
+<meta property="og:title" content="Marlon Paz — agents that operate networks">
+<meta property="og:description" content="I build agents that operate networks, and the harnesses that keep agents honest. Network architect at Core42 in Abu Dhabi; two peer-reviewed papers on autonomous EVPN fabrics.">
 <meta property="og:url" content="https://mairp.ai/">
 <meta property="og:image" content="https://mairp.ai/assets/og.png">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
-<meta property="og:image:alt" content="Marlon Paz — Network Architect · Agentic AI · Autonomous Cloud & Network Infrastructure · Internet of Agents">
+<meta property="og:image:alt" content="Marlon Paz — agents that operate networks">
 
 <!-- Twitter / X card -->
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content="Marlon Paz — Network Architect · Agentic AI · Autonomous Cloud & Network Infrastructure">
-<meta name="twitter:description" content="Production multi-agent systems on the Internet of Agents (AGNTCY · A2A · LangGraph · Agentic RAG) with full OpenTelemetry observability.">
+<meta name="twitter:title" content="Marlon Paz — agents that operate networks">
+<meta name="twitter:description" content="I build agents that operate networks, and the harnesses that keep agents honest. Network architect at Core42 in Abu Dhabi; two peer-reviewed papers on autonomous EVPN fabrics.">
 <meta name="twitter:image" content="https://mairp.ai/assets/og.png">
-<meta name="twitter:image:alt" content="Marlon Paz — Network Architect · Agentic AI · Autonomous Cloud & Network Infrastructure">
+<meta name="twitter:image:alt" content="Marlon Paz — agents that operate networks">
 
 <!-- Structured data: Person entity (helps search engines link the profile) -->
 <script type="application/ld+json">
@@ -48,15 +48,12 @@
   "name": "Marlon Paz",
   "url": "https://mairp.ai/",
   "image": "https://mairp.ai/assets/og.png",
-  "jobTitle": "Network Architect — DCI/OSS & Cloud Networking",
+  "jobTitle": "Network Architect",
   "worksFor": { "@type": "Organization", "name": "Core42" },
   "address": { "@type": "PostalAddress", "addressLocality": "Abu Dhabi", "addressCountry": "AE" },
   "knowsAbout": [
-    "Agentic AI", "AIOps", "Autonomous Cloud Infrastructure", "Autonomous Networks",
-    "Cloud Infrastructure", "Event-Driven Automation", "Internet of Agents", "AGNTCY",
-    "Agentic RAG", "Retrieval-Augmented Generation", "Multi-Agent Systems",
-    "Data Center Networking", "EVPN/VXLAN", "Kubernetes", "InfiniBand / RDMA / RoCE",
-    "OpenTelemetry Observability"
+    "Agentic network operations", "EVPN/VXLAN", "Data center networking", "Kubernetes operators",
+    "gNMI telemetry", "Multi-agent systems", "Spec-driven development", "OpenTelemetry observability"
   ],
   "hasCredential": [
     { "@type": "EducationalOccupationalCredential", "name": "CCIE" },
@@ -462,155 +459,27 @@
 
   <!-- HERO -->
   <header>
-    <div class="status rv"><span class="dot"></span>NETWORK&nbsp;ARCHITECT&nbsp;·&nbsp;DCI/OSS&nbsp;·&nbsp;CLOUD&nbsp;NETWORKING</div>
     <h1 class="rv">Marlon<br><span class="accent">Paz</span></h1>
-    <div class="role rv">Agentic AI <span class="arr">·</span> Autonomous Cloud &amp; Network Infrastructure <span class="arr">·</span> Internet of Agents</div>
+    <div class="role rv">I build agents that operate networks, and the harnesses that keep agents honest.</div>
     <div class="meta rv">
       <span><svg viewBox="0 0 24 24"><path d="M12 21s-7-5.5-7-11a7 7 0 0114 0c0 5.5-7 11-7 11z"/><circle cx="12" cy="10" r="2.5"/></svg>Abu Dhabi, UAE</span>
-      <span><svg viewBox="0 0 24 24"><path d="M4 19V5m0 14h16M8 16l3-5 3 3 4-7"/></svg>IEEE-published author</span>
     </div>
-    <p class="lede rv">Network architect turned automation builder, now a <b>Network Architect — DCI/OSS &amp; Cloud Networking</b>, building production
-      multi-agent systems on the <b>Internet of Agents</b> (AGNTCY · A2A · LangGraph) with full
-      <b>OpenTelemetry</b> observability — and bringing agentic AI to <b>autonomous, self-driving networks</b>.
-      Built on 15+ years of global ICT and expert-level networking across Cisco, Nokia and Juniper.</p>
+    <p class="lede rv">Network architect at Core42 in Abu Dhabi. Before that, IP/MPLS architecture at Nokia in Portugal,
+      including the Digital Twin as a Service work that became two peer-reviewed papers on autonomous EVPN fabrics.
+      Today the same ideas run as code: multi-agent systems that turn intent into verified network state, with
+      every claim checked on the device.</p>
   </header>
 
-  <!-- CERTIFICATIONS -->
+  <!-- WORK -->
   <section>
-    <div class="sec-head rv"><span class="sec-no">01</span><h2>Certifications</h2></div>
-    <div class="grid">
-      <div class="cert rv"><div class="code">CCIE</div><div class="desc">Cisco Certified Internetwork Expert</div></div>
-      <div class="cert rv"><div class="code">CKA</div><div class="desc">Certified Kubernetes Administrator</div></div>
-      <div class="cert rv"><div class="code">NVIDIA AIOps</div><div class="desc">AI Infrastructure &amp; Operations Associate</div></div>
-      <div class="cert rv"><div class="code">DevNet Pro</div><div class="desc">Cisco DevNet Professional</div></div>
-      <div class="cert rv"><div class="code">CCNP DC</div><div class="desc">CCNP Data Center</div></div>
-      <div class="cert rv"><div class="code">Nokia DCFP</div><div class="desc">Data Center Fabric Professional</div></div>
-      <div class="cert rv"><div class="code">Isovalent 20×</div><div class="desc">Lab Champion · Cilium / eBPF</div></div>
-      <div class="cert rv"><div class="code">Anthropic</div><div class="desc">Claude with the Anthropic API · Academy 2026</div></div>
-      <div class="cert rv flag"><span class="pursue">Expected Q4 2026</span><div class="code">CCIE Automation</div><div class="desc">Automation Architect</div></div>
-      <div class="cert rv flag"><span class="pursue">In&nbsp;progress</span><div class="code">ISO 42001</div><div class="desc">AI Mgmt System · Lead Implementer</div></div>
-      <div class="cert rv flag"><span class="pursue">In&nbsp;progress</span><div class="code">Claude Architect</div><div class="desc">Claude Certified Architect</div></div>
-    </div>
-  </section>
-
-  <!-- SKILLS -->
-  <section>
-    <div class="sec-head rv"><span class="sec-no">02</span><h2>Technical Stack</h2></div>
-    <div class="skill-cols">
-      <div class="rv">
-        <h3>AI &amp; HPC GPU Fabric</h3>
-        <div class="chips">
-          <span class="chip">InfiniBand</span><span class="chip">RDMA</span><span class="chip">RoCEv2</span>
-          <span class="chip">NVLink</span><span class="chip">NVSwitch</span><span class="chip">GPUDirect</span>
-          <span class="chip">NVIDIA UFM</span><span class="chip">OFED</span><span class="chip">GPU Clusters</span>
-          <span class="chip">Subnet Manager (OpenSM)</span><span class="chip">ECN / DCQCN</span><span class="chip">PFC</span>
-        </div>
-      </div>
-      <div class="rv">
-        <h3>Agentic AI &amp; AIOps</h3>
-        <div class="chips">
-          <span class="chip">AI Agents</span><span class="chip">Agentic Systems</span><span class="chip">Agntcy</span>
-          <span class="chip">A2A</span><span class="chip">MCP</span><span class="chip">Internet of Agents</span>
-          <span class="chip">LangGraph</span><span class="chip">LangChain</span><span class="chip">LlamaIndex</span>
-          <span class="chip">RAG</span><span class="chip">Agentic RAG</span><span class="chip">Vector Search</span>
-          <span class="chip">Embeddings</span><span class="chip">Semantic Memory</span>
-          <span class="chip">Claude</span><span class="chip">LiteLLM</span><span class="chip">Multi-Agent Systems</span>
-          <span class="chip">GPU Clusters</span><span class="chip">LLM Infrastructure</span><span class="chip">SLIM</span>
-          <span class="chip">NATS</span><span class="chip">Autonomous Networks</span>
-          <span class="chip">Agentic NetOps</span><span class="chip">Self-Driving Infra</span><span class="chip">AIOps</span>
-          <span class="chip">Claude Code</span><span class="chip">Ralph Loops</span><span class="chip">LLM-as-Critic</span>
-          <span class="chip">Spec-Driven Development</span><span class="chip">AI Governance</span>
-        </div>
-      </div>
-      <div class="rv">
-        <h3>Multi-Vendor Networking</h3>
-        <div class="chips">
-          <span class="chip">IP/MPLS</span><span class="chip">SR-MPLS</span><span class="chip">Segment Routing</span>
-          <span class="chip">BGP / EVPN</span><span class="chip">VXLAN</span><span class="chip">DCI / DCN</span>
-          <span class="chip">Cisco IOS-XR</span><span class="chip">NX-OS / ACI</span><span class="chip">Nokia SR Linux / SR OS</span>
-          <span class="chip">Juniper</span><span class="chip">Arista</span><span class="chip">CLOS Spine-Leaf</span>
-          <span class="chip">Secure ZTP</span><span class="chip">Digital Twin (DTaaS)</span><span class="chip">Critical Infrastructure</span>
-          <span class="chip">NGE (Network Group Encryption)</span><span class="chip">Secure Industrial Networking</span>
-        </div>
-      </div>
-      <div class="rv">
-        <h3>Automation &amp; Programmability</h3>
-        <div class="chips">
-          <span class="chip">Python</span><span class="chip">Ansible</span><span class="chip">Terraform</span>
-          <span class="chip">Bash</span><span class="chip">YANG</span><span class="chip">Robot Framework</span>
-          <span class="chip">Nornir</span><span class="chip">Scrapli</span><span class="chip">Netmiko</span>
-          <span class="chip">NAPALM</span><span class="chip">pyATS / Genie</span><span class="chip">NETCONF / RESTCONF</span>
-          <span class="chip">gNMI / Telemetry</span><span class="chip">Git</span>
-        </div>
-      </div>
-      <div class="rv">
-        <h3>Cloud-Native &amp; Observability</h3>
-        <div class="chips">
-          <span class="chip">Kubernetes</span><span class="chip">Cilium</span><span class="chip">Hubble</span>
-          <span class="chip">eBPF</span><span class="chip">containerlab</span>
-          <span class="chip">Prometheus</span><span class="chip">Loki</span><span class="chip">Zabbix</span>
-          <span class="chip">NetBox</span>
-        </div>
-      </div>
-      <div class="rv">
-        <h3>Security &amp; AI Governance</h3>
-        <div class="chips">
-          <span class="chip">NIST CSF</span><span class="chip">NIST AI RMF</span><span class="chip">ISO/IEC 42001</span>
-          <span class="chip">Responsible AI</span><span class="chip">Secure-by-Design</span><span class="chip">IAM</span>
-          <span class="chip">AAA · TACACS+ · RADIUS</span><span class="chip">Red Hat IDM</span><span class="chip">Risk Assessment</span>
-        </div>
-      </div>
-      <div class="rv">
-        <h3>GenAI Platform &amp; Observability</h3>
-        <div class="chips">
-          <span class="chip">OpenTelemetry</span><span class="chip">OTLP</span><span class="chip">LLM Tracing</span>
-          <span class="chip">ClickHouse</span><span class="chip">Grafana</span><span class="chip">FastAPI</span>
-          <span class="chip">Pydantic</span><span class="chip">gRPC / Protobuf</span><span class="chip">Docker</span>
-        </div>
-      </div>
-      <div class="rv">
-        <h3>Full-Stack Delivery</h3>
-        <div class="chips">
-          <span class="chip">Python 3.13</span><span class="chip">async / asyncio</span><span class="chip">React 19</span>
-          <span class="chip">TypeScript</span><span class="chip">Vite</span><span class="chip">TailwindCSS</span>
-          <span class="chip">React Flow</span><span class="chip">uv</span>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- BUILDING NOW -->
-  <section>
-    <div class="sec-head rv"><span class="sec-no">★</span><h2>Building Now</h2><span class="tag">Internet of Agents</span></div>
+    <div class="sec-head rv"><span class="sec-no">01</span><h2>Work</h2></div>
     <div class="dir rv">
-      <h3><a href="https://github.com/mairp/agent-observability-stack" target="_blank" rel="noopener">Tokenomics <span class="accent">Observability</span><span class="gh">github ↗</span></a></h3>
-      <p>Making agent spend legible: end-to-end <b>token &amp; cost telemetry</b> for a multi-agent fleet — every LLM call
-        instrumented through <b>LiteLLM</b> and <b>OpenTelemetry</b>, streamed to <b>Prometheus</b>, <b>Loki</b> and
-        <b>Tempo</b>, and surfaced on <b>Grafana</b> dashboards that break down tokens, latency and dollars per agent,
-        per model and per task. Local-GPU aware (Intel iGPU/NPU + RTX&nbsp;3090 eGPU), with Telegram budget alerts.</p>
-      <div class="chips" style="margin-top:24px;position:relative">
-        <span class="chip">Tokenomics</span><span class="chip">OpenTelemetry</span><span class="chip">Prometheus</span>
-        <span class="chip">Grafana</span><span class="chip">Loki</span><span class="chip">Tempo</span>
-        <span class="chip">LiteLLM</span><span class="chip">Cost Tracking</span>
-      </div>
-      <a class="vid" href="https://youtu.be/Qq-M7x4rsoc?si=cKc1MO2FAvudL8Dl" target="_blank" rel="noopener" aria-label="Watch the Tokenomics Observability walkthrough">
-        <img src="assets/tokenomics-video-thumb.jpg" alt="Tokenomics Observability walkthrough video" loading="lazy">
-        <span class="play"><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg></span>
-        <span class="cap">▶ Watch the walkthrough</span>
-      </a>
-      <p class="vid-meta">Agentic Observability Stack · 13 views on YouTube</p>
-      <div class="path" style="margin-top:20px">
-        <a class="step" href="https://github.com/mairp/agent-observability-stack" target="_blank" rel="noopener"><b>›</b>&nbsp;agent-observability-stack ↗</a>
-      </div>
-    </div>
-    <div class="dir rv" style="margin-top:20px">
-      <h3><a href="https://github.com/mairp/agentic-netops" target="_blank" rel="noopener">Agentic <span class="accent">NetOps</span> — Intent to Fabric<span class="gh">github ↗</span></a></h3>
-      <p>Autonomous network operations where the agents <i>are</i> the control plane: state intent in plain language
-        and an <b>AGNTCY</b> multi-agent tier (a <b>LangGraph</b> supervisor with mapper, allocator and deployer agents over
-        <b>A2A</b>/<b>SLIM</b>) decomposes it, allocates identifiers and submits declarative resources. <b>Kubernetes</b>
-        controllers reconcile them onto a live <b>SONiC EVPN/VXLAN</b> fabric — and <i>keep</i> them there, repairing
-        drift and releasing what they claimed when intent is withdrawn. <b>gNMI</b> telemetry closes the loop.
-        Every “deployed” claim is verified on the device, never assumed.</p>
+      <h3><a href="https://github.com/mairp/agentic-netops" target="_blank" rel="noopener">agentic-netops: <span class="accent">intent to fabric</span><span class="gh">github ↗</span></a></h3>
+      <p>State intent in plain language; an AGNTCY multi-agent tier (a LangGraph supervisor with mapper, allocator and
+        deployer agents over A2A/SLIM) decomposes it and submits declarative resources. Kubernetes controllers written
+        in Go reconcile them onto a live SONiC EVPN/VXLAN fabric, repair drift, and release what they claimed when
+        intent is withdrawn. gNMI telemetry closes the loop; <b>nothing is reported as deployed until it is verified
+        on the device</b>.</p>
       <div class="loop" aria-label="Closed loop: intent, agents, controllers, fabric, telemetry">
         <div class="stg"><div class="k">01 · Intent</div><div class="t">Plain language</div><div class="d">“stretch a mac-vrf across both leaves”</div></div>
         <div class="stg"><div class="k">02 · Agents</div><div class="t">AGNTCY + LangGraph</div><div class="d">map → allocate → confirm → deploy transaction w/ rollback</div></div>
@@ -627,53 +496,20 @@
         <source src="assets/agentic-netops-demo.mp4" type="video/mp4">
       </video>
       <p class="vid-meta">Demo · intent tier end to end — vlan, ip-vrf and a stretched mac-vrf provisioned from plain language, then proven with kubectl and on the SONiC leaves · 6½ min</p>
-      <div class="chips" style="margin-top:24px;position:relative">
-        <span class="chip">Intent-Based Networking</span><span class="chip">AGNTCY</span><span class="chip">LangGraph</span>
-        <span class="chip">A2A / SLIM</span><span class="chip">Kubernetes Operators</span><span class="chip">Go</span>
-        <span class="chip">SONiC</span><span class="chip">EVPN/VXLAN</span><span class="chip">SRv6</span>
-        <span class="chip">gNMI</span><span class="chip">YANG</span><span class="chip">containerlab</span>
-      </div>
+      <p class="vid-meta">Nokia SR Linux variant: <a href="https://github.com/mairp/agentic-netops-srl" target="_blank" rel="noopener" style="color:inherit">agentic-netops-srl</a>.</p>
       <div class="path" style="margin-top:20px">
         <a class="step star" href="https://github.com/mairp/agentic-netops" target="_blank" rel="noopener"><b>★</b>&nbsp;agentic-netops ↗</a>
         <a class="step" href="https://github.com/mairp/agentic-netops/blob/main/TUTORIAL.md" target="_blank" rel="noopener"><b>›</b>&nbsp;tutorial ↗</a>
+        <a class="step" href="https://github.com/mairp/agentic-netops-srl" target="_blank" rel="noopener"><b>›</b>&nbsp;agentic-netops-srl ↗</a>
       </div>
     </div>
     <div class="dir rv" style="margin-top:20px">
-      <h3><a href="https://github.com/mairp/mixture-of-loops" target="_blank" rel="noopener">Mixture <span class="accent">of Loops</span><span class="gh">github ↗</span></a></h3>
-      <p>A spec compiler for autonomous delivery: one <b>Agent Skills</b> package, shared by <b>Claude Code</b>, <b>Codex</b>,
-        <b>pi</b>, <b>prime</b> and dsh, that reads <b>GitHub Spec Kit</b> features holistically (spec, plan, tasks, verification
-        declarations, dependencies, release gates) and derives a <b>provenance-bound launch contract</b> plus an executable,
-        unattended pipeline. Every source is pinned by SHA-256, so editing a spec after derivation blocks the launch until the
-        contract is regenerated. Silence is never consent to execute: generation is the default, and a run is started detached and
-        supervised from its own telemetry, relaunching only on stops its records classify as transient.</p>
-      <div class="loop" aria-label="Pipeline: Spec Kit artifacts, launch contract, validate and render, supervised run">
-        <div class="stg"><div class="k">01 · Inventory</div><div class="t">Spec Kit artifacts</div><div class="d">spec · plan · tasks · gates, one or many features</div></div>
-        <div class="stg"><div class="k">02 · Contract</div><div class="t">Provenance-bound</div><div class="d">SHA-256 sources, stage graph, evidence each step must produce</div></div>
-        <div class="stg"><div class="k">03 · Gate</div><div class="t">Validate → render</div><div class="d">blockers refuse (exit 20/23); content-addressed launcher, bash -n, dry-run</div></div>
-        <div class="stg"><div class="k">04 · Run</div><div class="t">Detached + supervised</div><div class="d">lock, re-hash, skip satisfied stages, bounded transient relaunch</div></div>
-      </div>
-      <div class="stats">
-        <div><b>5</b>harnesses · one canonical skill</div>
-        <div><b>3</b>modes · generate · run · auto</div>
-        <div><b>0</b>runs without an explicit ask</div>
-      </div>
-      <div class="chips" style="margin-top:24px;position:relative">
-        <span class="chip">Spec-Driven Development</span><span class="chip">Agent Skills</span><span class="chip">Spec Kit</span>
-        <span class="chip">Provenance</span><span class="chip">Launch Contracts</span><span class="chip">Claude Code</span>
-        <span class="chip">Codex</span><span class="chip">Python</span><span class="chip">Bash</span>
-      </div>
-      <div class="path" style="margin-top:20px">
-        <a class="step" href="https://github.com/mairp/mixture-of-loops" target="_blank" rel="noopener"><b>›</b>&nbsp;mixture-of-loops ↗</a>
-      </div>
-    </div>
-    <div class="dir rv" style="margin-top:20px">
-      <h3><a href="https://github.com/mairp/specstride" target="_blank" rel="noopener"><span class="accent">Specstride</span> — From Specs to Tested Code<span class="gh">github ↗</span></a></h3>
-      <p>The engine those pipelines drive: an autonomous coding orchestrator that takes a Spec Kit feature phase by phase, where
-        <i>nothing advances until an LLM critic approves it</i> against the acceptance criteria and the real code. Stuck phases get a
-        <b>diagnostician</b> that reads the full rejection history and an <b>accelerator</b> that retries only the failing criteria.
-        An opt-in outer loop learns per-phase budgets from its own <b>OpenTelemetry</b> and JSONL events, evaluates each change
-        against its baseline, and <b>auto-reverts</b> on any guardrail breach. The agents stay stateless; what improves is how the
-        loop drives them, and the critic's independence is locked by a test.</p>
+      <h3><a href="https://github.com/mairp/specstride" target="_blank" rel="noopener">specstride: <span class="accent">from specs to tested code</span><span class="gh">github ↗</span></a></h3>
+      <p>An autonomous coding orchestrator that takes a Spec Kit feature phase by phase. <b>Nothing advances until an
+        independent LLM critic approves it</b> against the acceptance criteria and the real code. Stuck phases get a
+        diagnostician and a narrowed retry. An opt-in outer loop learns per-phase budgets from its own telemetry and
+        reverts any change that regresses. Standard library only. mixture-of-loops compiles Spec Kit features into
+        provenance-bound, unattended Specstride pipelines.</p>
       <div class="loop l3" aria-label="Three nested loops: pass, gated phase, learning">
         <div class="stg"><div class="k">Inner · pass loop</div><div class="t">Fresh stateless session</div><div class="d">works until the phase's evidence file exists; only disk carries over</div></div>
         <div class="stg"><div class="k">Middle · gated phase</div><div class="t">Proposer → critic</div><div class="d">approve or retry; diagnostician + narrowed accelerator when stuck</div></div>
@@ -681,61 +517,39 @@
       </div>
       <div class="stats">
         <div><b>3</b>nested loops, one self-tuning</div>
-        <div><b>2</b>tunable knobs · the critic is never one</div>
-        <div><b>0</b>third-party deps · stdlib only</div>
-      </div>
-      <div class="chips" style="margin-top:24px;position:relative">
-        <span class="chip">Autonomous Coding</span><span class="chip">Ralph Loop</span><span class="chip">LLM-as-Critic</span>
-        <span class="chip">Spec-Driven Development</span><span class="chip">Self-Tuning</span><span class="chip">OpenTelemetry</span>
-        <span class="chip">Python 3.13</span><span class="chip">Bash</span>
+        <div><b>0</b>third-party dependencies</div>
       </div>
       <div class="path" style="margin-top:20px">
         <a class="step" href="https://github.com/mairp/specstride" target="_blank" rel="noopener"><b>›</b>&nbsp;specstride ↗</a>
+        <a class="step" href="https://github.com/mairp/mixture-of-loops" target="_blank" rel="noopener"><b>›</b>&nbsp;mixture-of-loops ↗</a>
       </div>
     </div>
     <div class="dir rv" style="margin-top:20px">
-      <h3>AI <span class="accent">Governance</span> Control Plane</h3>
-      <p>A vendor-neutral <b>AI governance</b> platform for continuous model &amp; agent inventory, human oversight,
-        control orchestration, and evidence custody across deployment boundaries. Built on a strict invariant —
-        a UI, event or dashboard is never governance authority: consequential changes require current human
-        authority, <b>separation-of-duties</b> checks, an atomic canonical-state-and-audit commit, and retained
-        evidence. Hexagonal domain core with replaceable ports over a <b>PostgreSQL</b> canonical store, a
-        <b>hash-chained audit ledger</b>, a content-addressed evidence store, an <b>OPA</b> policy decision point,
-        and event-driven projectors over <b>NATS JetStream</b>.</p>
-      <div class="chips" style="margin-top:24px;position:relative">
-        <span class="chip">AI Governance</span><span class="chip">RBAC / ABAC / SoD</span><span class="chip">OPA Policy</span>
-        <span class="chip">Hash-Chained Audit</span><span class="chip">Evidence Custody</span><span class="chip">Compliance Mapping</span>
-        <span class="chip">PostgreSQL</span><span class="chip">NATS JetStream</span><span class="chip">TypeScript</span>
-        <span class="chip">Node.js 22</span><span class="chip">Kubernetes</span>
-      </div>
-    </div>
-    <div class="dir rv" style="margin-top:20px">
-      <h3>Production <span class="accent">Multi-Agent Systems</span></h3>
-      <p>Designing and operating teams of autonomous AI agents that plan, build, review and act — orchestrated
-        with <b>LangGraph</b> over the <b>AGNTCY</b> Internet-of-Agents stack (A2A protocol, SLIM transport, NATS),
-        multi-model through <b>LiteLLM</b>, and fully instrumented with <b>OpenTelemetry</b> (traces into ClickHouse
-        and Grafana). Python&nbsp;3.13 / FastAPI services, a React&nbsp;19 frontend, shipped on Docker &amp; Kubernetes.</p>
-      <div class="chips" style="margin-top:24px;position:relative">
-        <span class="chip">LangGraph</span><span class="chip">A2A Protocol</span><span class="chip">AGNTCY SLIM</span>
-        <span class="chip">NATS</span><span class="chip">OpenTelemetry</span><span class="chip">ClickHouse</span>
-        <span class="chip">Grafana</span><span class="chip">FastAPI</span><span class="chip">LiteLLM</span>
-        <span class="chip">React 19</span><span class="chip">Kubernetes</span><span class="chip">Python 3.13</span>
-      </div>
+      <h3><a href="https://github.com/mairp/agent-observability-stack" target="_blank" rel="noopener">agent-observability-stack: <span class="accent">tokenomics</span><span class="gh">github ↗</span></a></h3>
+      <p>End-to-end <b>token and cost telemetry</b> for a multi-agent fleet. Every LLM call instrumented through LiteLLM
+        and OpenTelemetry, streamed to Prometheus, Loki and Tempo, broken down per agent, model and task in Grafana.
+        GPU-aware, with Telegram budget alerts.</p>
+      <a class="vid" href="https://youtu.be/Qq-M7x4rsoc?si=cKc1MO2FAvudL8Dl" target="_blank" rel="noopener" aria-label="Watch the agent-observability-stack walkthrough">
+        <img src="assets/tokenomics-video-thumb.jpg" alt="agent-observability-stack walkthrough video" loading="lazy">
+        <span class="play"><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg></span>
+        <span class="cap">▶ Watch the walkthrough</span>
+      </a>
       <div class="path" style="margin-top:20px">
-        <a class="step" href="https://github.com/mairp/coffeeAgntcy" target="_blank" rel="noopener"><b>›</b>&nbsp;coffeeAgntcy · AGNTCY reference ↗</a>
+        <a class="step" href="https://github.com/mairp/agent-observability-stack" target="_blank" rel="noopener"><b>›</b>&nbsp;agent-observability-stack ↗</a>
       </div>
     </div>
     <div class="dir rv" style="margin-top:20px">
-      <h3><a href="https://github.com/mairp/qmd-memory-stack" target="_blank" rel="noopener">Agentic <span class="accent">RAG</span> &amp; Agent Memory<span class="gh">github ↗</span></a></h3>
-      <p>Giving those agents a memory: a local, GPU-accelerated <b>Retrieval-Augmented Generation</b> layer where
-        the agent itself decides what to retrieve, re-queries, and grounds its answers in cited sources — a hierarchical,
-        three-tier <b>semantic memory</b> over local GGUF <b>embeddings</b> and <b>vector search</b>, served to the fleet
-        through an <b>MCP</b> gateway. Runs on-prem on an Intel Arc iGPU (~19× query speedup via Vulkan), fail-open by design.</p>
-      <div class="chips" style="margin-top:24px;position:relative">
-        <span class="chip">Agentic RAG</span><span class="chip">Vector Search</span><span class="chip">Embeddings</span>
-        <span class="chip">Semantic Memory</span><span class="chip">MCP</span><span class="chip">Local GGUF</span>
-        <span class="chip">Hierarchical Memory</span><span class="chip">On-Prem GPU</span>
+      <h3><a href="https://github.com/mairp/agentic-ops-bench" target="_blank" rel="noopener">agentic-ops-bench: <span class="accent">which model, which harness</span><span class="gh">github ↗</span></a></h3>
+      <p>A benchmark of models against harnesses on real operations tasks: AIOps, NetDevOps, HPC, inference, RAG and
+        tool loops. Local 30B-class models on one RTX&nbsp;3090 compared with hosted frontier models.</p>
+      <div class="path" style="margin-top:20px">
+        <a class="step" href="https://github.com/mairp/agentic-ops-bench" target="_blank" rel="noopener"><b>›</b>&nbsp;agentic-ops-bench ↗</a>
       </div>
+    </div>
+    <div class="dir rv" style="margin-top:20px">
+      <h3><a href="https://github.com/mairp/qmd-memory-stack" target="_blank" rel="noopener">qmd-memory-stack: <span class="accent">agent memory</span><span class="gh">github ↗</span></a></h3>
+      <p>Local three-tier RAG memory over GGUF embeddings, served to the fleet through an MCP gateway.
+        <b>~19× query speedup</b> on an Intel Arc iGPU via Vulkan.</p>
       <div class="path" style="margin-top:20px">
         <a class="step" href="https://github.com/mairp/qmd-memory-stack" target="_blank" rel="noopener"><b>›</b>&nbsp;qmd-memory-stack ↗</a>
         <a class="step" href="https://github.com/mairp/qmd-gateway" target="_blank" rel="noopener"><b>›</b>&nbsp;qmd-gateway ↗</a>
@@ -743,22 +557,10 @@
     </div>
   </section>
 
-  <!-- EXPERIENCE -->
-  <section>
-    <div class="sec-head rv"><span class="sec-no">03</span><h2>Trajectory</h2></div>
-    <div class="tl">
-      <div class="job now rv"><div class="yr">2024 — PRESENT</div><div class="ttl">Network Architect — DCI/OSS · Cloud Networking</div><div class="org">Core42 · Abu Dhabi, UAE · Cloud infrastructure &amp; NetOps</div></div>
-      <div class="job rv"><div class="yr">2019 — 2024</div><div class="ttl">IP/MPLS Network Architect</div><div class="org">Nokia · Amadora, Portugal — DTaaS (Digital Twin as a Service), Secure ZTP, smart-grid &amp; railway critical infrastructure</div></div>
-      <div class="job rv"><div class="yr">2018 — 2019</div><div class="ttl">Network Consulting Engineer</div><div class="org">Layer2 Consulting (Cisco) · Honduras</div></div>
-      <div class="job rv"><div class="yr">2016 — 2018</div><div class="ttl">Network &amp; Security Specialist</div><div class="org">Citi Bank (contract) · San Salvador</div></div>
-      <div class="job rv"><div class="yr">2014 — 2016</div><div class="ttl">Telecommunications Engineer</div><div class="org">Tigo (contract) · San Salvador</div></div>
-      <div class="job rv"><div class="yr">2009</div><div class="ttl">B.Sc. Electrical Engineering</div><div class="org">Universidad Centroamericana (UCA) · San Salvador</div></div>
-    </div>
-  </section>
-
   <!-- PUBLICATIONS -->
   <section>
-    <div class="sec-head rv"><span class="sec-no">04</span><h2>Publications</h2><span class="tag">co-authored · peer-reviewed</span></div>
+    <div class="sec-head rv"><span class="sec-no">02</span><h2>Publications</h2><span class="tag">co-authored · peer-reviewed</span></div>
+    <p class="vid-meta rv" style="margin:0 0 20px">Both papers came out of the Nokia DTaaS work; agentic-netops is their continuation in code.</p>
     <div class="repos">
       <a class="repo rv" href="https://ieeexplore.ieee.org/document/11080420/" target="_blank" rel="noopener">
         <div class="rn"><svg viewBox="0 0 24 24"><path d="M4 19V5m0 14h16M8 16l3-5 3 3 4-7"/></svg>Decentralized &amp; Dynamic Zero-Touch Provisioning of Leaf-Spine EVPN Data Centers</div>
@@ -773,74 +575,57 @@
     </div>
   </section>
 
+  <!-- EXPERIENCE -->
+  <section>
+    <div class="sec-head rv"><span class="sec-no">03</span><h2>Trajectory</h2></div>
+    <div class="tl">
+      <div class="job now rv"><div class="yr">2024 — PRESENT</div><div class="ttl">Network Architect, DCI and cloud networking</div><div class="org">Core42 · Abu Dhabi, UAE · Cloud infrastructure &amp; NetOps</div></div>
+      <div class="job rv"><div class="yr">2019 — 2024</div><div class="ttl">IP/MPLS Network Architect</div><div class="org">Nokia · Amadora, Portugal — DTaaS (Digital Twin as a Service), Secure ZTP, smart-grid &amp; railway critical infrastructure</div></div>
+      <div class="job rv"><div class="yr">2018 — 2019</div><div class="ttl">Network Consulting Engineer</div><div class="org">Layer2 Consulting (Cisco) · Honduras</div></div>
+      <div class="job rv"><div class="yr">2016 — 2018</div><div class="ttl">Network &amp; Security Specialist</div><div class="org">Citi Bank (contract) · San Salvador</div></div>
+      <div class="job rv"><div class="yr">2014 — 2016</div><div class="ttl">Telecommunications Engineer</div><div class="org">Tigo (contract) · San Salvador</div></div>
+      <div class="job rv"><div class="yr">2009</div><div class="ttl">B.Sc. Electrical Engineering</div><div class="org">Universidad Centroamericana (UCA) · San Salvador</div></div>
+    </div>
+  </section>
+
   <!-- OPEN SOURCE -->
   <section>
-    <div class="sec-head rv"><span class="sec-no">05</span><h2>Open Source</h2><span class="tag">github.com/mairp</span></div>
+    <div class="sec-head rv"><span class="sec-no">04</span><h2>Open Source</h2><a class="tag" href="https://github.com/mairp?tab=repositories" target="_blank" rel="noopener" style="text-decoration:none">all repos ↗</a></div>
     <div class="repos">
       <!-- REPOS:START — generated by /root/portfolio-sync, do not edit by hand -->
-      <a class="repo rv" href="https://github.com/mairp/qmd-memory-stack" target="_blank" rel="noopener">
-        <div class="rn"><svg viewBox="0 0 24 24"><path d="M4 6c0-1.4 3.6-2.5 8-2.5s8 1.1 8 2.5-3.6 2.5-8 2.5-8-1.1-8-2.5z"/><path d="M4 6v6c0 1.4 3.6 2.5 8 2.5s8-1.1 8-2.5V6"/><path d="M4 12v6c0 1.4 3.6 2.5 8 2.5s8-1.1 8-2.5v-6"/></svg>qmd-memory-stack</div>
-        <div class="rd">Local, GPU-accelerated RAG memory for coding agents (Claude Code + OpenClaw) — hierarchical 3-tier memory over local GGUF embeddings + an MCP server; ~19× query speedup on an Intel Arc iGPU via Vulkan. Idempotent bash installer, fail-open recall.</div>
-        <div class="rf"><span><span class="lang" style="background:#89e051"></span>Shell</span><span><b>★</b> 1</span></div>
-      </a>
-      <a class="repo rv" href="https://github.com/mairp/specstride" target="_blank" rel="noopener">
-        <div class="rn"><svg viewBox="0 0 24 24"><path d="M4 5a2 2 0 0 1 2-2h12v18H6a2 2 0 0 1-2-2z"/><path d="M9 3v18"/></svg>specstride</div>
-        <div class="rd">Spec-driven autonomous coding orchestrator: drives your agent through GitHub Spec Kit phases behind an LLM critic gate and diagnoses stuck phases. It also improves itself: it learns per-phase settings from its own run telemetry, tests each change against a baseline, and reverts any that make things worse.</div>
-        <div class="rf"><span><span class="lang" style="background:#3572A5"></span>Python</span><span><b>★</b> 3</span></div>
+      <a class="repo rv" href="https://github.com/mairp/agentic-netops" target="_blank" rel="noopener">
+        <div class="rn"><svg viewBox="0 0 24 24"><path d="M4 5a2 2 0 0 1 2-2h12v18H6a2 2 0 0 1-2-2z"/><path d="M9 3v18"/></svg>agentic-netops</div>
+        <div class="rd">AGNTCY + LangGraph agents turn intent into CRs; Kubernetes controllers reconcile them onto a live SONiC EVPN/VXLAN fabric; gNMI telemetry closes the loop. Runs in containerlab + kind.</div>
+        <div class="rf"><span><span class="lang" style="background:#3572A5"></span>Python</span><span><b>★</b> 2</span><span><b>⑂</b> 1</span></div>
       </a>
       <a class="repo rv" href="https://github.com/mairp/agentic-netops-srl" target="_blank" rel="noopener">
         <div class="rn"><svg viewBox="0 0 24 24"><path d="M4 5a2 2 0 0 1 2-2h12v18H6a2 2 0 0 1-2-2z"/><path d="M9 3v18"/></svg>agentic-netops-srl</div>
         <div class="rd">Agentic NetOps on Nokia SR Linux — declarative EVPN/VXLAN fabric control plane with a guarded multi-agent intent tier.</div>
         <div class="rf"><span><span class="lang" style="background:#89e051"></span>Shell</span></div>
       </a>
+      <a class="repo rv" href="https://github.com/mairp/specstride" target="_blank" rel="noopener">
+        <div class="rn"><svg viewBox="0 0 24 24"><path d="M4 5a2 2 0 0 1 2-2h12v18H6a2 2 0 0 1-2-2z"/><path d="M9 3v18"/></svg>specstride</div>
+        <div class="rd">Spec-driven autonomous coding orchestrator: drives your agent through GitHub Spec Kit phases behind an LLM critic gate and diagnoses stuck phases. It also improves itself: it learns per-phase settings from its own run telemetry, tests each change against a baseline, and reverts any that make things worse.</div>
+        <div class="rf"><span><span class="lang" style="background:#3572A5"></span>Python</span><span><b>★</b> 3</span></div>
+      </a>
       <a class="repo rv" href="https://github.com/mairp/mixture-of-loops" target="_blank" rel="noopener">
         <div class="rn"><svg viewBox="0 0 24 24"><path d="M4 5a2 2 0 0 1 2-2h12v18H6a2 2 0 0 1-2-2z"/><path d="M9 3v18"/></svg>mixture-of-loops</div>
-        <div class="rd">Generate provenance-bound unattended Specstried pipelines from Spec Kit artifacts.</div>
+        <div class="rd">Generate provenance-bound, unattended Specstride pipelines from Spec Kit artifacts.</div>
         <div class="rf"><span><span class="lang" style="background:#3572A5"></span>Python</span><span><b>★</b> 1</span></div>
-      </a>
-      <a class="repo rv" href="https://github.com/mairp/agentic-netops" target="_blank" rel="noopener">
-        <div class="rn"><svg viewBox="0 0 24 24"><path d="M4 5a2 2 0 0 1 2-2h12v18H6a2 2 0 0 1-2-2z"/><path d="M9 3v18"/></svg>agentic-netops</div>
-        <div class="rd">AGNTCY + LangGraph agents turn intent into CRs; Kubernetes controllers reconcile them onto a live SONiC EVPN/VXLAN fabric; gNMI telemetry closes the loop. Runs in containerlab + kind.</div>
-        <div class="rf"><span><span class="lang" style="background:#3572A5"></span>Python</span><span><b>★</b> 2</span><span><b>⑂</b> 1</span></div>
       </a>
       <a class="repo rv" href="https://github.com/mairp/agent-observability-stack" target="_blank" rel="noopener">
         <div class="rn"><svg viewBox="0 0 24 24"><path d="M4 5a2 2 0 0 1 2-2h12v18H6a2 2 0 0 1-2-2z"/><path d="M9 3v18"/></svg>agent-observability-stack</div>
         <div class="rd">Self-hostable observability for LLM agents + a Linux host (Intel iGPU/NPU + NVIDIA RTX 3090 eGPU aware): Prometheus + Grafana + Tempo + OTel, OpenClaw/LiteLLM/Claude Code/RAG metrics, dynamic onboarding, Telegram alerts.</div>
         <div class="rf"><span><span class="lang" style="background:#3572A5"></span>Python</span><span><b>★</b> 1</span></div>
       </a>
-      <a class="repo rv" href="https://github.com/mairp/spec-kit" target="_blank" rel="noopener">
-        <div class="rn"><svg viewBox="0 0 24 24"><path d="M4 5a2 2 0 0 1 2-2h12v18H6a2 2 0 0 1-2-2z"/><path d="M9 3v18"/></svg>spec-kit</div>
-        <div class="rd">💫 Toolkit to help you get started with SDD or any other process!</div>
-        <div class="rf"><span><span class="lang" style="background:#3572A5"></span>Python</span><span><b>⑂</b> fork</span></div>
+      <a class="repo rv" href="https://github.com/mairp/agentic-ops-bench" target="_blank" rel="noopener">
+        <div class="rn"><svg viewBox="0 0 24 24"><path d="M4 5a2 2 0 0 1 2-2h12v18H6a2 2 0 0 1-2-2z"/><path d="M9 3v18"/></svg>agentic-ops-bench</div>
+        <div class="rd">Model x harness benchmark on real agentic ops tasks (AIOps, NetDevOps, HPC, inference, RAG, tool loops). Local 30B-class models on one RTX 3090 vs hosted frontier models.</div>
+        <div class="rf"><span><span class="lang" style="background:#3572A5"></span>Python</span><span><b>★</b> 1</span></div>
       </a>
-      <a class="repo rv" href="https://github.com/mairp/esf" target="_blank" rel="noopener">
-        <div class="rn"><svg viewBox="0 0 24 24"><path d="M4 5a2 2 0 0 1 2-2h12v18H6a2 2 0 0 1-2-2z"/><path d="M9 3v18"/></svg>esf</div>
-        <div class="rd">Engineering Software Factory - open source, self-hosted, local AI first.</div>
-        <div class="rf"><span><span class="lang" style="background:#00ADD8"></span>Go</span><span><b>⑂</b> fork</span></div>
-      </a>
-      <a class="repo rv" href="https://github.com/mairp/llama.cpp" target="_blank" rel="noopener">
-        <div class="rn"><svg viewBox="0 0 24 24"><path d="M4 5a2 2 0 0 1 2-2h12v18H6a2 2 0 0 1-2-2z"/><path d="M9 3v18"/></svg>llama.cpp</div>
-        <div class="rd">LLM inference in C/C++.</div>
-        <div class="rf"><span><span class="lang" style="background:#f34b7d"></span>C++</span><span><b>⑂</b> fork</span></div>
-      </a>
-      <a class="repo rv" href="https://github.com/mairp/awesome-ai-agents" target="_blank" rel="noopener">
-        <div class="rn"><svg viewBox="0 0 24 24"><path d="M4 5a2 2 0 0 1 2-2h12v18H6a2 2 0 0 1-2-2z"/><path d="M9 3v18"/></svg>awesome-ai-agents</div>
-        <div class="rd">A list of AI autonomous agents.</div>
-        <div class="rf"><span><b>⑂</b> fork</span></div>
-      </a>
-      <a class="repo rv" href="https://github.com/mairp/ax" target="_blank" rel="noopener">
-        <div class="rn"><svg viewBox="0 0 24 24"><path d="M4 5a2 2 0 0 1 2-2h12v18H6a2 2 0 0 1-2-2z"/><path d="M9 3v18"/></svg>ax</div>
-        <div class="rd">Google's open agentic orchestrator.</div>
-        <div class="rf"><span><span class="lang" style="background:#00ADD8"></span>Go</span><span><b>⑂</b> fork</span></div>
-      </a>
-      <a class="repo rv" href="https://github.com/mairp/semantic-router" target="_blank" rel="noopener">
-        <div class="rn"><svg viewBox="0 0 24 24"><path d="M4 5a2 2 0 0 1 2-2h12v18H6a2 2 0 0 1-2-2z"/><path d="M9 3v18"/></svg>semantic-router</div>
-        <div class="rd">A programmable Mixture-of-Models router for heterogeneous LLM inference.</div>
-        <div class="rf"><span><span class="lang" style="background:#00ADD8"></span>Go</span><span><b>⑂</b> fork</span></div>
-      </a>
-      <a class="repo rv" href="https://github.com/mairp/video-to-deck" target="_blank" rel="noopener">
-        <div class="rn"><svg viewBox="0 0 24 24"><path d="M4 5a2 2 0 0 1 2-2h12v18H6a2 2 0 0 1-2-2z"/><path d="M9 3v18"/></svg>video-to-deck</div>
-        <div class="rd">Turn videos into Marp slide decks (PPTX/PDF/HTML). Local whisper + OCR + optional VLM captions build an evidence bundle; a fresh agent per video writes the deck. Structural content becomes Mermaid diagrams. Pluggable agent, CUDA-accelerated, CPU-portable.</div>
+      <a class="repo rv" href="https://github.com/mairp/qmd-memory-stack" target="_blank" rel="noopener">
+        <div class="rn"><svg viewBox="0 0 24 24"><path d="M4 6c0-1.4 3.6-2.5 8-2.5s8 1.1 8 2.5-3.6 2.5-8 2.5-8-1.1-8-2.5z"/><path d="M4 6v6c0 1.4 3.6 2.5 8 2.5s8-1.1 8-2.5V6"/><path d="M4 12v6c0 1.4 3.6 2.5 8 2.5s8-1.1 8-2.5v-6"/></svg>qmd-memory-stack</div>
+        <div class="rd">Local, GPU-accelerated RAG memory for coding agents (Claude Code + OpenClaw) — hierarchical 3-tier memory over local GGUF embeddings + an MCP server; ~19× query speedup on an Intel Arc iGPU via Vulkan. Idempotent bash installer, fail-open recall.</div>
         <div class="rf"><span><span class="lang" style="background:#89e051"></span>Shell</span><span><b>★</b> 1</span></div>
       </a>
       <a class="repo rv" href="https://github.com/mairp/qmd-gateway" target="_blank" rel="noopener">
@@ -848,104 +633,74 @@
         <div class="rd">Shared, warm, writable qmd MCP memory gateway for a multi-agent coding fleet.</div>
         <div class="rf"><span><span class="lang" style="background:#89e051"></span>Shell</span><span><b>★</b> 1</span></div>
       </a>
+      <a class="repo rv" href="https://github.com/mairp/antares-scan" target="_blank" rel="noopener">
+        <div class="rn"><svg viewBox="0 0 24 24"><path d="M4 5a2 2 0 0 1 2-2h12v18H6a2 2 0 0 1-2-2z"/><path d="M9 3v18"/></svg>antares-scan</div>
+        <div class="rd">Fast, free first-pass security triage of a code folder with a local antares-1b (Granite-4.0) model.</div>
+        <div class="rf"><span><span class="lang" style="background:#89e051"></span>Shell</span><span><b>★</b> 2</span></div>
+      </a>
+      <a class="repo rv" href="https://github.com/mairp/video-to-deck" target="_blank" rel="noopener">
+        <div class="rn"><svg viewBox="0 0 24 24"><path d="M4 5a2 2 0 0 1 2-2h12v18H6a2 2 0 0 1-2-2z"/><path d="M9 3v18"/></svg>video-to-deck</div>
+        <div class="rd">Turn videos into Marp slide decks (PPTX/PDF/HTML). Local whisper + OCR + optional VLM captions build an evidence bundle; a fresh agent per video writes the deck. Structural content becomes Mermaid diagrams. Pluggable agent, CUDA-accelerated, CPU-portable.</div>
+        <div class="rf"><span><span class="lang" style="background:#89e051"></span>Shell</span><span><b>★</b> 1</span></div>
+      </a>
       <a class="repo rv" href="https://github.com/mairp/kedin" target="_blank" rel="noopener">
         <div class="rn"><svg viewBox="0 0 24 24"><path d="M4 5a2 2 0 0 1 2-2h12v18H6a2 2 0 0 1-2-2z"/><path d="M9 3v18"/></svg>kedin</div>
         <div class="rd">An AI agent (managed via Telegram, orchestrated by OpenClaw) that ghost-writes LinkedIn posts in your voice with UML/architecture diagrams. Public, dummy-data demo of the digital-twin career-agent pattern.</div>
         <div class="rf"><span><span class="lang" style="background:#f1e05a"></span>JavaScript</span><span><b>★</b> 1</span></div>
-      </a>
-      <a class="repo rv" href="https://github.com/mairp/kanban" target="_blank" rel="noopener">
-        <div class="rn"><svg viewBox="0 0 24 24"><path d="M4 5a2 2 0 0 1 2-2h12v18H6a2 2 0 0 1-2-2z"/><path d="M9 3v18"/></svg>kanban</div>
-        <div class="rd">Persistent kanban board — Hono API + Next.js + SQLite + Claude AI + Telegram bot integration.</div>
-        <div class="rf"><span><span class="lang" style="background:#89e051"></span>Shell</span><span><b>★</b> 1</span></div>
       </a>
       <a class="repo rv" href="https://github.com/mairp/havan" target="_blank" rel="noopener">
         <div class="rn"><svg viewBox="0 0 24 24"><path d="M4 5a2 2 0 0 1 2-2h12v18H6a2 2 0 0 1-2-2z"/><path d="M9 3v18"/></svg>havan</div>
         <div class="rd">Havan - an autonomous flight-deal hunting AI agent. Managed from Telegram, orchestrated by OpenClaw: searches Google Flights / Skyscanner / OTAs for the cheapest fare with good timing and returns a ranked shortlist with booking links. Public, dummy-data demo.</div>
         <div class="rf"><span><b>★</b> 1</span></div>
       </a>
-      <a class="repo rv" href="https://github.com/mairp/gpu_rtx_3090" target="_blank" rel="noopener">
-        <div class="rn"><svg viewBox="0 0 24 24"><path d="M4 5a2 2 0 0 1 2-2h12v18H6a2 2 0 0 1-2-2z"/><path d="M9 3v18"/></svg>gpu_rtx_3090</div>
-        <div class="rd">Safe power-cycle scripts for an RTX 3090 Thunderbolt-4 eGPU (drain/detach/rescan + systemd shutdown guard).</div>
-        <div class="rf"><span><span class="lang" style="background:#89e051"></span>Shell</span><span><b>★</b> 1</span></div>
-      </a>
       <a class="repo rv" href="https://github.com/mairp/kind-cilium-hubble-cluster" target="_blank" rel="noopener">
         <div class="rn"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="3"/><circle cx="5" cy="6" r="2"/><circle cx="19" cy="6" r="2"/><circle cx="12" cy="20" r="2"/><path d="M7 7l3 3m7-3l-3 3m-2 6v-3"/></svg>kind-cilium-hubble-cluster</div>
         <div class="rd">Bootstraps an observable K8s cluster from scratch with kind + Cilium + Hubble.</div>
         <div class="rf"><span><span class="lang" style="background:#89e051"></span>Shell</span><span><b>★</b> 1</span><span><b>⑂</b> 1</span></div>
+      </a>
+      <a class="repo rv" href="https://github.com/mairp/kanban" target="_blank" rel="noopener">
+        <div class="rn"><svg viewBox="0 0 24 24"><path d="M4 5a2 2 0 0 1 2-2h12v18H6a2 2 0 0 1-2-2z"/><path d="M9 3v18"/></svg>kanban</div>
+        <div class="rd">Persistent kanban board — Hono API + Next.js + SQLite + Claude AI + Telegram bot integration.</div>
+        <div class="rf"><span><span class="lang" style="background:#89e051"></span>Shell</span><span><b>★</b> 1</span></div>
+      </a>
+      <a class="repo rv" href="https://github.com/mairp/gpu_rtx_3090" target="_blank" rel="noopener">
+        <div class="rn"><svg viewBox="0 0 24 24"><path d="M4 5a2 2 0 0 1 2-2h12v18H6a2 2 0 0 1-2-2z"/><path d="M9 3v18"/></svg>gpu_rtx_3090</div>
+        <div class="rd">Safe power-cycle scripts for an RTX 3090 Thunderbolt-4 eGPU (drain/detach/rescan + systemd shutdown guard).</div>
+        <div class="rf"><span><span class="lang" style="background:#89e051"></span>Shell</span><span><b>★</b> 1</span></div>
       </a>
       <a class="repo rv" href="https://github.com/mairp/claude-plugins" target="_blank" rel="noopener">
         <div class="rn"><svg viewBox="0 0 24 24"><path d="M4 5a2 2 0 0 1 2-2h12v18H6a2 2 0 0 1-2-2z"/><path d="M9 3v18"/></svg>claude-plugins</div>
         <div class="rd">Marlon De Paz's Claude Code plugin marketplace.</div>
         <div class="rf"><span><b>★</b> 1</span></div>
       </a>
-      <a class="repo rv" href="https://github.com/mairp/antares-scan" target="_blank" rel="noopener">
-        <div class="rn"><svg viewBox="0 0 24 24"><path d="M4 5a2 2 0 0 1 2-2h12v18H6a2 2 0 0 1-2-2z"/><path d="M9 3v18"/></svg>antares-scan</div>
-        <div class="rd">Fast, free first-pass security triage of a code folder with a local antares-1b (Granite-4.0) model.</div>
-        <div class="rf"><span><span class="lang" style="background:#89e051"></span>Shell</span><span><b>★</b> 2</span></div>
-      </a>
       <a class="repo rv" href="https://github.com/mairp/certforge" target="_blank" rel="noopener">
         <div class="rn"><svg viewBox="0 0 24 24"><path d="M4 5a2 2 0 0 1 2-2h12v18H6a2 2 0 0 1-2-2z"/><path d="M9 3v18"/></svg>certforge</div>
         <div class="rd">certforge — a small OpenSSL CLI to generate CSRs (for signing by an internal CA) or self-signed certificates from a .cnf, with or without an existing key.</div>
         <div class="rf"><span><span class="lang" style="background:#89e051"></span>Shell</span><span><b>★</b> 1</span></div>
-      </a>
-      <a class="repo rv" href="https://github.com/mairp/agentic-ops-bench" target="_blank" rel="noopener">
-        <div class="rn"><svg viewBox="0 0 24 24"><path d="M4 5a2 2 0 0 1 2-2h12v18H6a2 2 0 0 1-2-2z"/><path d="M9 3v18"/></svg>agentic-ops-bench</div>
-        <div class="rd">Model x harness benchmark on real agentic ops tasks (AIOps, NetDevOps, HPC, inference, RAG, tool loops). Local 30B-class models on one RTX 3090 vs hosted frontier models.</div>
-        <div class="rf"><span><span class="lang" style="background:#3572A5"></span>Python</span><span><b>★</b> 1</span></div>
-      </a>
-      <a class="repo rv" href="https://github.com/mairp/club-3090" target="_blank" rel="noopener">
-        <div class="rn"><svg viewBox="0 0 24 24"><path d="M4 5a2 2 0 0 1 2-2h12v18H6a2 2 0 0 1-2-2z"/><path d="M9 3v18"/></svg>club-3090</div>
-        <div class="rd">Community recipes for serving LLMs on RTX 3090/4090/5090 CUDA gpus. Multi-engine (vLLM, llama.cpp, ik_llama) and model-agnostic. Currently shipping Qwen3.6-27B Qwen3.6 35B Gemma 4 26B Gemma 4 31B configs for 1× and 2× cards.</div>
-        <div class="rf"><span><span class="lang" style="background:#3572A5"></span>Python</span><span><b>⑂</b> fork</span></div>
       </a>
       <a class="repo rv" href="https://github.com/mairp/duby" target="_blank" rel="noopener">
         <div class="rn"><svg viewBox="0 0 24 24"><path d="M3 17l6-6 4 4 7-7"/><path d="M14 8h6v6"/></svg>duby</div>
         <div class="rd">AI investment-analysis agent — monitors Telegram channels for trading signals, enriches them with live market data, and delivers position-sized analysis via a dashboard and Telegram bot.</div>
         <div class="rf"><span><span class="lang" style="background:#3572A5"></span>Python</span><span><b>★</b> 1</span></div>
       </a>
-      <a class="repo rv" href="https://github.com/mairp/sros-anysec-macsec-lab" target="_blank" rel="noopener">
-        <div class="rn"><svg viewBox="0 0 24 24"><path d="M12 3l7 4v5c0 4-3 7-7 9-4-2-7-5-7-9V7z"/><path d="M9 12l2 2 4-4"/></svg>sros-anysec-macsec-lab</div>
-        <div class="rd">ANYsec + MACsec lab environment.</div>
-        <div class="rf"><span><span class="lang" style="background:#3572A5"></span>Python</span><span><b>⑂</b> fork</span></div>
-      </a>
-      <a class="repo rv" href="https://github.com/mairp/sros-anysec-lab" target="_blank" rel="noopener">
-        <div class="rn"><svg viewBox="0 0 24 24"><path d="M12 3l7 4v5c0 4-3 7-7 9-4-2-7-5-7-9V7z"/></svg>sros-anysec-lab</div>
-        <div class="rd">ANYsec demo on containerlab with Nokia SROS FP5 vSIMs.</div>
-        <div class="rf"><span><span class="lang" style="background:#4f5d95"></span>PHP</span><span><b>★</b> 2</span><span><b>⑂</b> fork</span></div>
-      </a>
       <a class="repo rv" href="https://github.com/mairp/vrnetlab" target="_blank" rel="noopener">
         <div class="rn"><svg viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="6" rx="1"/><rect x="3" y="14" width="18" height="6" rx="1"/><path d="M7 7h.01M7 17h.01"/></svg>vrnetlab</div>
         <div class="rd">Contributed ISA-MS card support for vr-sros.</div>
         <div class="rf"><span><span class="lang" style="background:#3572A5"></span>Python</span><span><b>★</b> 1</span><span><b>⑂</b> fork</span></div>
       </a>
-      <a class="repo rv" href="https://github.com/mairp/srl-sros-telemetry-lab" target="_blank" rel="noopener">
-        <div class="rn"><svg viewBox="0 0 24 24"><path d="M4 19V5m0 14h16M8 16l3-5 3 3 4-7"/></svg>srl-sros-telemetry-lab</div>
-        <div class="rd">Interactive streaming telemetry lab — Nokia SR Linux + SR OS.</div>
-        <div class="rf"><span><span class="lang" style="background:#89e051"></span>Shell</span><span><b>★</b> 1</span><span><b>⑂</b> fork</span></div>
-      </a>
       <!-- REPOS:END -->
     </div>
   </section>
 
-  <!-- DIRECTION -->
+  <!-- BACKGROUND -->
   <section>
-    <div class="sec-head rv"><span class="sec-no">06</span><h2>Where I'm Headed</h2></div>
+    <div class="sec-head rv"><span class="sec-no">05</span><h2>Background</h2></div>
     <div class="dir rv">
-      <h3>Agentic AI &amp; <span class="accent">Autonomous Cloud &amp; Network Infrastructure</span></h3>
-      <p>Converging two decades of networking and automation with agentic AI across the full stack — from the
-        <b>cloud infrastructure</b> and <b>Kubernetes</b> platforms up through the <b>networks</b> that bind them:
-        building AI agents and the systems that connect, secure and observe them (AIOps), open standards like
-        <b>Agntcy</b> that let agents interoperate across the <b>Internet of Agents</b>, and <b>autonomous,
-        self-driving cloud &amp; network infrastructure</b> that runs and heals itself. At the essential core of
-        the stack is <b>reliable, resilient, event-driven automation and observability</b> — the foundation
-        everything else is built on — all with governance that keeps it accountable. The plan favors depth over speed.</p>
-      <div class="path">
-        <span class="step"><b>›</b> CCA Foundations</span>
-        <span class="step"><b>›</b> ISO/IEC 42001 Lead Implementer</span>
-        <span class="step"><b>›</b> NCP-AAI · Agentic AI</span>
-        <span class="step star"><b>★</b> CCA Advanced</span>
-        <span class="step"><b>›</b> IAPP AIGP capstone</span>
-      </div>
+      <p>CCIE · CKA · Cisco DevNet Professional · CCNP Data Center · Nokia DCFP · NVIDIA AI Infrastructure and
+        Operations · Isovalent Lab Champion</p>
+      <p style="margin-top:16px"><b>Networks:</b> IP/MPLS, SR, BGP/EVPN, VXLAN, Cisco IOS-XR and NX-OS, Nokia SR Linux and SR OS, SONiC, containerlab<br>
+        <b>Platforms:</b> Kubernetes, Cilium/eBPF, Go operators, Python, gNMI, Prometheus, OpenTelemetry, Grafana<br>
+        <b>Agents:</b> LangGraph, AGNTCY (A2A, SLIM), MCP, LiteLLM, Claude Code</p>
     </div>
   </section>
 
@@ -971,14 +726,13 @@
         <svg viewBox="0 0 24 24"><path d="M4 4h16v16H4z"/><path d="M4 6l8 6 8-6"/></svg>
         marlon.paz@ieee.org</a>
     </div>
-    <div class="foot-note">$ whoami → aiops architect · agent builder · internet of&nbsp;agents</div>
   </div>
 </footer>
 
 <!-- DIGITAL TWIN CHAT -->
-<button id="twin-launch" aria-label="Ask Marlon's digital twin about his career">
+<button id="twin-launch" aria-label="Ask Marlon's digital twin about his work">
   <svg viewBox="0 0 24 24"><path d="M21 15a2 2 0 01-2 2H7l-4 4V5a2 2 0 012-2h14a2 2 0 012 2z"/></svg>
-  Ask my digital twin
+  Ask about my work
 </button>
 <div id="twin-panel" role="dialog" aria-label="Marlon's digital twin career chat" aria-modal="false">
   <div class="twin-head">
