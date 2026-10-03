@@ -528,7 +528,8 @@
       <h3><a href="https://github.com/mairp/agent-observability-stack" target="_blank" rel="noopener">agent-observability-stack: <span class="accent">tokenomics</span><span class="gh">github ↗</span></a></h3>
       <p>End-to-end <b>token and cost telemetry</b> for a multi-agent fleet. Every LLM call instrumented through LiteLLM
         and OpenTelemetry, streamed to Prometheus, Loki and Tempo, broken down per agent, model and task in Grafana.
-        GPU-aware, with Telegram budget alerts.</p>
+        Every trace also fans out to Arize Phoenix for span-level inspection of LLM calls. GPU-aware, with Telegram
+        budget alerts.</p>
       <a class="vid" href="https://youtu.be/Qq-M7x4rsoc?si=cKc1MO2FAvudL8Dl" target="_blank" rel="noopener" aria-label="Watch the agent-observability-stack walkthrough">
         <img src="assets/tokenomics-video-thumb.jpg" alt="agent-observability-stack walkthrough video" loading="lazy">
         <span class="play"><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg></span>
@@ -601,7 +602,7 @@
       <a class="repo rv" href="https://github.com/mairp/agentic-netops-srl" target="_blank" rel="noopener">
         <div class="rn"><svg viewBox="0 0 24 24"><path d="M4 5a2 2 0 0 1 2-2h12v18H6a2 2 0 0 1-2-2z"/><path d="M9 3v18"/></svg>agentic-netops-srl</div>
         <div class="rd">Agentic NetOps on Nokia SR Linux — declarative EVPN/VXLAN fabric control plane with a guarded multi-agent intent tier.</div>
-        <div class="rf"><span><span class="lang" style="background:#89e051"></span>Shell</span></div>
+        <div class="rf"><span><span class="lang" style="background:#89e051"></span>Shell</span><span><b>★</b> 1</span></div>
       </a>
       <a class="repo rv" href="https://github.com/mairp/specstride" target="_blank" rel="noopener">
         <div class="rn"><svg viewBox="0 0 24 24"><path d="M4 5a2 2 0 0 1 2-2h12v18H6a2 2 0 0 1-2-2z"/><path d="M9 3v18"/></svg>specstride</div>
@@ -615,7 +616,7 @@
       </a>
       <a class="repo rv" href="https://github.com/mairp/agent-observability-stack" target="_blank" rel="noopener">
         <div class="rn"><svg viewBox="0 0 24 24"><path d="M4 5a2 2 0 0 1 2-2h12v18H6a2 2 0 0 1-2-2z"/><path d="M9 3v18"/></svg>agent-observability-stack</div>
-        <div class="rd">Self-hostable observability for LLM agents + a Linux host (Intel iGPU/NPU + NVIDIA RTX 3090 eGPU aware): Prometheus + Grafana + Tempo + OTel, OpenClaw/LiteLLM/Claude Code/RAG metrics, dynamic onboarding, Telegram alerts.</div>
+        <div class="rd">Self-hostable observability for LLM agents + a Linux host (Intel iGPU/NPU + NVIDIA RTX 3090 eGPU aware): Prometheus + Grafana + Loki + Tempo + Arize Phoenix + OTel, OpenClaw/LiteLLM/Claude Code/RAG metrics and traces, dynamic onboarding, Telegram alerts.</div>
         <div class="rf"><span><span class="lang" style="background:#3572A5"></span>Python</span><span><b>★</b> 1</span></div>
       </a>
       <a class="repo rv" href="https://github.com/mairp/agentic-ops-bench" target="_blank" rel="noopener">
@@ -658,6 +659,11 @@
         <div class="rd">Bootstraps an observable K8s cluster from scratch with kind + Cilium + Hubble.</div>
         <div class="rf"><span><span class="lang" style="background:#89e051"></span>Shell</span><span><b>★</b> 1</span><span><b>⑂</b> 1</span></div>
       </a>
+      <a class="repo rv" href="https://github.com/mairp/claude-plugins" target="_blank" rel="noopener">
+        <div class="rn"><svg viewBox="0 0 24 24"><path d="M4 5a2 2 0 0 1 2-2h12v18H6a2 2 0 0 1-2-2z"/><path d="M9 3v18"/></svg>claude-plugins</div>
+        <div class="rd">Marlon De Paz's Claude Code plugin marketplace.</div>
+        <div class="rf"><span><span class="lang" style="background:#89e051"></span>Shell</span><span><b>★</b> 1</span></div>
+      </a>
       <a class="repo rv" href="https://github.com/mairp/kanban" target="_blank" rel="noopener">
         <div class="rn"><svg viewBox="0 0 24 24"><path d="M4 5a2 2 0 0 1 2-2h12v18H6a2 2 0 0 1-2-2z"/><path d="M9 3v18"/></svg>kanban</div>
         <div class="rd">Persistent kanban board — Hono API + Next.js + SQLite + Claude AI + Telegram bot integration.</div>
@@ -667,11 +673,6 @@
         <div class="rn"><svg viewBox="0 0 24 24"><path d="M4 5a2 2 0 0 1 2-2h12v18H6a2 2 0 0 1-2-2z"/><path d="M9 3v18"/></svg>gpu_rtx_3090</div>
         <div class="rd">Safe power-cycle scripts for an RTX 3090 Thunderbolt-4 eGPU (drain/detach/rescan + systemd shutdown guard).</div>
         <div class="rf"><span><span class="lang" style="background:#89e051"></span>Shell</span><span><b>★</b> 1</span></div>
-      </a>
-      <a class="repo rv" href="https://github.com/mairp/claude-plugins" target="_blank" rel="noopener">
-        <div class="rn"><svg viewBox="0 0 24 24"><path d="M4 5a2 2 0 0 1 2-2h12v18H6a2 2 0 0 1-2-2z"/><path d="M9 3v18"/></svg>claude-plugins</div>
-        <div class="rd">Marlon De Paz's Claude Code plugin marketplace.</div>
-        <div class="rf"><span><b>★</b> 1</span></div>
       </a>
       <a class="repo rv" href="https://github.com/mairp/certforge" target="_blank" rel="noopener">
         <div class="rn"><svg viewBox="0 0 24 24"><path d="M4 5a2 2 0 0 1 2-2h12v18H6a2 2 0 0 1-2-2z"/><path d="M9 3v18"/></svg>certforge</div>
