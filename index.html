@@ -446,26 +446,27 @@
   /* Square scrollbar thumbs to match. */
   [data-theme] *::-webkit-scrollbar-thumb{border-radius:0;}
 
-  /* ==== AMBIENT LAYER — bounded exception to the flattening layer (dark theme only) ====
+  /* ==== AMBIENT LAYER — bounded exception to the flattening layer ====
      Agreed 2026-10-03: a breathing glow on the hero horizon, a dot-grid ground, edge-lit
      cards with a hover sweep, and a glowing CTA. Still one accent (green), still square,
-     still black-on-green CTAs. The light theme stays fully flat. */
+     still black-on-green CTAs. Both themes; the light one glows green on white. */
+  [data-theme="dark"]{--dot:rgba(255,255,255,.085);--orb-core:#fff;--orb-op:.8;--ring:rgba(255,255,255,.28)}
+  [data-theme="light"]{--dot:rgba(0,0,0,.13);--orb-core:#a6e22e;--orb-op:.6;--ring:rgba(0,0,0,.22)}
 
   /* Dot-grid ground. */
-  [data-theme="dark"] body::before{content:"";position:fixed;inset:0;z-index:0;pointer-events:none;
-    background:radial-gradient(rgba(255,255,255,.085) 1px,transparent 1.6px) 0 0/22px 22px}
+  [data-theme] body::before{content:"";position:fixed;inset:0;z-index:0;pointer-events:none;
+    background:radial-gradient(var(--dot) 1px,transparent 1.6px) 0 0/22px 22px}
 
   /* Hero horizon: blurred orb (white core, green halo) + a hairline ring, both mostly below the fold. */
   header{position:relative}
-  .hero-glow{display:none}
-  [data-theme="dark"] .hero-glow{display:block;position:absolute;top:0;bottom:0;left:50%;width:100vw;
+  .hero-glow{position:absolute;top:0;bottom:0;left:50%;width:100vw;
     transform:translateX(-50%);overflow:hidden;z-index:-1;pointer-events:none}
   .hero-glow .orb,.hero-glow .ring{position:absolute;left:50%;translate:-50% 0;
     width:min(1100px,92vw);aspect-ratio:1;border-radius:50%}
   .hero-glow .orb{top:calc(100% - clamp(70px,11vw,150px));
-    background:radial-gradient(circle,#fff 30%,var(--signal) 50%,transparent 70%);
-    filter:blur(60px);opacity:.8;animation:orb-breathe 5s ease-in-out infinite alternate}
-  .hero-glow .ring{top:calc(100% - clamp(56px,8vw,110px));border:1px solid rgba(255,255,255,.28);
+    background:radial-gradient(circle,var(--orb-core) 30%,var(--signal) 50%,transparent 70%);
+    filter:blur(60px);opacity:var(--orb-op);animation:orb-breathe 5s ease-in-out infinite alternate}
+  .hero-glow .ring{top:calc(100% - clamp(56px,8vw,110px));border:1px solid var(--ring);
     animation:ring-in 1.5s cubic-bezier(.34,1.56,.64,1) .5s both}
   @keyframes orb-breathe{from{scale:.93}to{scale:1.04}}
   @keyframes ring-in{from{transform:translateY(200px);opacity:0}to{transform:none;opacity:1}}
@@ -476,31 +477,31 @@
   header .rv.in{transform:none}
 
   /* Edge-lit cards: a green light on the left edge, and a gradient that sweeps in on hover. */
-  [data-theme="dark"] .dir,
-  [data-theme="dark"] .cert,
-  [data-theme="dark"] .repo{position:relative;isolation:isolate;overflow:hidden;
+  [data-theme] .dir,
+  [data-theme] .cert,
+  [data-theme] .repo{position:relative;isolation:isolate;overflow:hidden;
     border-left-color:var(--signal-dim);
     box-shadow:inset 18px 0 22px -18px color-mix(in srgb,var(--signal) 45%,transparent) !important}
-  [data-theme="dark"] .dir::after,
-  [data-theme="dark"] .cert::before,
-  [data-theme="dark"] .repo::before{content:"";position:absolute;inset:0;z-index:-1;pointer-events:none;
+  [data-theme] .dir::after,
+  [data-theme] .cert::before,
+  [data-theme] .repo::before{content:"";position:absolute;inset:0;z-index:-1;pointer-events:none;
     background:linear-gradient(to right,color-mix(in srgb,var(--signal) 22%,transparent),transparent);
     transform:scaleX(0);transform-origin:left;transition:transform 1.6s cubic-bezier(.16,1,.3,1)}
-  [data-theme="dark"] .dir:hover::after,
-  [data-theme="dark"] .cert:hover::before,
-  [data-theme="dark"] .repo:hover::before{transform:scaleX(1)}
-  [data-theme="dark"] .repo:hover{background:var(--panel)}
+  [data-theme] .dir:hover::after,
+  [data-theme] .cert:hover::before,
+  [data-theme] .repo:hover::before{transform:scaleX(1)}
+  [data-theme] .repo:hover{background:var(--panel)}
 
   /* Glow on the CTA and the footer links. */
-  [data-theme="dark"] #twin-launch{animation:cta-glow 3s linear infinite alternate}
+  [data-theme] #twin-launch{animation:cta-glow 3s linear infinite alternate}
   @keyframes cta-glow{from{box-shadow:0 0 0 0 color-mix(in srgb,var(--signal) 30%,transparent)}
     to{box-shadow:0 0 44px 0 color-mix(in srgb,var(--signal) 60%,transparent)}}
-  [data-theme="dark"] .links a:hover{box-shadow:0 0 26px color-mix(in srgb,var(--signal) 45%,transparent)}
+  [data-theme] .links a:hover{box-shadow:0 0 26px color-mix(in srgb,var(--signal) 45%,transparent)}
 
   @media (prefers-reduced-motion: reduce){
-    .hero-glow .orb,.hero-glow .ring,[data-theme="dark"] #twin-launch{animation:none}
+    .hero-glow .orb,.hero-glow .ring,[data-theme] #twin-launch{animation:none}
     header .rv{transform:none}
-    [data-theme="dark"] .dir::after,[data-theme="dark"] .cert::before,[data-theme="dark"] .repo::before{transition:none}
+    [data-theme] .dir::after,[data-theme] .cert::before,[data-theme] .repo::before{transition:none}
   }
 </style>
 </head>
