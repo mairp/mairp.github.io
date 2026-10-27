@@ -57,6 +57,7 @@
   ],
   "hasCredential": [
     { "@type": "EducationalOccupationalCredential", "name": "CCIE" },
+    { "@type": "EducationalOccupationalCredential", "name": "NVIDIA-Certified Professional: Agentic AI (NCP-AAI)" },
     { "@type": "EducationalOccupationalCredential", "name": "Certified Kubernetes Administrator (CKA)" },
     { "@type": "EducationalOccupationalCredential", "name": "NVIDIA AI Infrastructure & Operations Associate" }
   ],
@@ -252,6 +253,18 @@
     font-size:.72rem;color:var(--ink-faint)}
   .repo .rf b{color:var(--ink-dim);font-weight:500}
   .lang{width:9px;height:9px;border-radius:50%;display:inline-block;margin-right:4px}
+
+  /* certification badges */
+  .badges{display:grid;grid-template-columns:repeat(auto-fill,minmax(118px,1fr));gap:12px;margin-top:22px}
+  .badge{display:flex;flex-direction:column;align-items:center;text-align:center;text-decoration:none;
+    background:var(--panel);border:1px solid var(--line);border-radius:12px;padding:16px 10px;transition:.3s}
+  .badge:hover{border-color:var(--signal-dim);background:var(--repo-hover);transform:translateY(-3px)}
+  .badge img{width:96px;height:96px;object-fit:contain}
+  .badge .bn{color:var(--ink);font-size:.78rem;font-weight:600;margin-top:10px;line-height:1.3}
+  .badge .bi{font-family:'JetBrains Mono',monospace;font-size:.66rem;color:var(--ink-faint);margin-top:4px}
+  .badges-all{margin-top:18px;font-family:'JetBrains Mono',monospace;font-size:.78rem}
+  .badges-all a{color:var(--signal);text-decoration:none}
+  @media (prefers-reduced-motion:reduce){.badge{transition:none}.badge:hover{transform:none}}
 
   /* direction */
   .dir{background:var(--dir-grad);border:1px solid var(--line);
@@ -664,12 +677,12 @@
       <a class="repo rv" href="https://github.com/mairp/agentic-netops-srl" target="_blank" rel="noopener">
         <div class="rn"><svg viewBox="0 0 24 24"><path d="M4 5a2 2 0 0 1 2-2h12v18H6a2 2 0 0 1-2-2z"/><path d="M9 3v18"/></svg>agentic-netops-srl</div>
         <div class="rd">Agentic NetOps on Nokia SR Linux — declarative EVPN/VXLAN fabric control plane with a guarded multi-agent intent tier.</div>
-        <div class="rf"><span><span class="lang" style="background:#89e051"></span>Shell</span><span><b>★</b> 1</span></div>
+        <div class="rf"><span><span class="lang" style="background:#89e051"></span>Shell</span><span><b>★</b> 3</span></div>
       </a>
       <a class="repo rv" href="https://github.com/mairp/specstride" target="_blank" rel="noopener">
         <div class="rn"><svg viewBox="0 0 24 24"><path d="M4 5a2 2 0 0 1 2-2h12v18H6a2 2 0 0 1-2-2z"/><path d="M9 3v18"/></svg>specstride</div>
         <div class="rd">Spec-driven autonomous coding orchestrator: drives your agent through GitHub Spec Kit phases behind an LLM critic gate and diagnoses stuck phases. It also improves itself: it learns per-phase settings from its own run telemetry, tests each change against a baseline, and reverts any that make things worse.</div>
-        <div class="rf"><span><span class="lang" style="background:#3572A5"></span>Python</span><span><b>★</b> 3</span></div>
+        <div class="rf"><span><span class="lang" style="background:#3572A5"></span>Python</span><span><b>★</b> 4</span></div>
       </a>
       <a class="repo rv" href="https://github.com/mairp/mixture-of-loops" target="_blank" rel="noopener">
         <div class="rn"><svg viewBox="0 0 24 24"><path d="M4 5a2 2 0 0 1 2-2h12v18H6a2 2 0 0 1-2-2z"/><path d="M9 3v18"/></svg>mixture-of-loops</div>
@@ -704,7 +717,7 @@
       <a class="repo rv" href="https://github.com/mairp/video-to-deck" target="_blank" rel="noopener">
         <div class="rn"><svg viewBox="0 0 24 24"><path d="M4 5a2 2 0 0 1 2-2h12v18H6a2 2 0 0 1-2-2z"/><path d="M9 3v18"/></svg>video-to-deck</div>
         <div class="rd">Turn videos into Marp slide decks (PPTX/PDF/HTML). Local whisper + OCR + optional VLM captions build an evidence bundle; a fresh agent per video writes the deck. Structural content becomes Mermaid diagrams. Pluggable agent, CUDA-accelerated, CPU-portable.</div>
-        <div class="rf"><span><span class="lang" style="background:#89e051"></span>Shell</span><span><b>★</b> 1</span></div>
+        <div class="rf"><span><span class="lang" style="background:#3572A5"></span>Python</span><span><b>★</b> 2</span></div>
       </a>
       <a class="repo rv" href="https://github.com/mairp/kedin" target="_blank" rel="noopener">
         <div class="rn"><svg viewBox="0 0 24 24"><path d="M4 5a2 2 0 0 1 2-2h12v18H6a2 2 0 0 1-2-2z"/><path d="M9 3v18"/></svg>kedin</div>
@@ -740,6 +753,16 @@
         <div class="rn"><svg viewBox="0 0 24 24"><path d="M4 5a2 2 0 0 1 2-2h12v18H6a2 2 0 0 1-2-2z"/><path d="M9 3v18"/></svg>vrnetlab</div>
         <div class="rd">Contributed ISA-MS card support for vr-sros.</div>
         <div class="rf"><span><span class="lang" style="background:#3572A5"></span>Python</span><span><b>★</b> 1</span><span><b>⑂</b> fork</span></div>
+      </a>
+      <a class="repo rv" href="https://github.com/mairp/nb-robotic-ai-hk" target="_blank" rel="noopener">
+        <div class="rn"><svg viewBox="0 0 24 24"><path d="M4 5a2 2 0 0 1 2-2h12v18H6a2 2 0 0 1-2-2z"/><path d="M9 3v18"/></svg>nb-robotic-ai-hk</div>
+        <div class="rd"></div>
+        <div class="rf"><span><span class="lang" style="background:#89e051"></span>Shell</span></div>
+      </a>
+      <a class="repo rv" href="https://github.com/mairp/agent-skills" target="_blank" rel="noopener">
+        <div class="rn"><svg viewBox="0 0 24 24"><path d="M4 5a2 2 0 0 1 2-2h12v18H6a2 2 0 0 1-2-2z"/><path d="M9 3v18"/></svg>agent-skills</div>
+        <div class="rd">Agent skills I use every day: GPU and fleet ops, Proxmox ops/triage, local-model routing, fleet memory, spec reconciliation, spec-corpus curation.</div>
+        <div class="rf"><span><span class="lang" style="background:#3572A5"></span>Python</span></div>
       </a>
       <a class="repo rv" href="https://github.com/mairp/specstride.ai" target="_blank" rel="noopener">
         <div class="rn"><svg viewBox="0 0 24 24"><path d="M4 5a2 2 0 0 1 2-2h12v18H6a2 2 0 0 1-2-2z"/><path d="M9 3v18"/></svg>specstride.ai</div>
@@ -779,8 +802,59 @@
   <section>
     <div class="sec-head rv"><span class="sec-no">05</span><h2>Background</h2></div>
     <div class="dir rv">
-      <p>CCIE · CKA · Cisco DevNet Professional · CCNP Data Center · Nokia DCFP · NVIDIA AI Infrastructure and
+      <p>CCIE · CKA · CCNP Automation · CCNP Data Center · NVIDIA Agentic AI Professional · NVIDIA AI Infrastructure and
         Operations · Isovalent Lab Champion</p>
+      <div class="badges">
+        <a class="badge" href="https://credential.nvidia.com/261533bc-e7df-43a6-bf8c-9150e73cd1d6" target="_blank" rel="noopener" title="Verify: NVIDIA-Certified Professional: Agentic AI">
+          <img src="assets/badges/nvidia-ncp-agentic-ai.webp" alt="NVIDIA-Certified Professional: Agentic AI, NVIDIA" width="96" height="96" loading="lazy">
+          <span class="bn">NVIDIA-Certified Professional: Agentic AI</span><span class="bi">NVIDIA · 2026</span>
+        </a>
+        <a class="badge" href="https://www.credly.com/badges/0a453125-9c86-44fe-9fd2-0465961b7061" target="_blank" rel="noopener" title="Verify: NVIDIA-Certified Associate: AI Infrastructure and Operations">
+          <img src="assets/badges/nvidia-nca-aiio.webp" alt="NVIDIA-Certified Associate: AI Infrastructure and Operations, NVIDIA" width="96" height="96" loading="lazy">
+          <span class="bn">NVIDIA-Certified Associate: AI Infrastructure and Operations</span><span class="bi">NVIDIA · 2025</span>
+        </a>
+        <a class="badge" href="https://www.credly.com/badges/7cecdec8-a72b-4f3d-ae91-2e17ca8ef0ef" target="_blank" rel="noopener" title="Verify: CCIE Service Provider">
+          <img src="assets/badges/cisco-ccie-sp.webp" alt="CCIE Service Provider, Cisco" width="96" height="96" loading="lazy">
+          <span class="bn">CCIE Service Provider</span><span class="bi">Cisco · 2019</span>
+        </a>
+        <a class="badge" href="https://www.credly.com/badges/690633fa-bf4d-4c7e-90b0-b93adba6d136" target="_blank" rel="noopener" title="Verify: CCNP Automation">
+          <img src="assets/badges/cisco-ccnp-automation.webp" alt="CCNP Automation, Cisco" width="96" height="96" loading="lazy">
+          <span class="bn">CCNP Automation</span><span class="bi">Cisco · 2025</span>
+        </a>
+        <a class="badge" href="https://www.credly.com/badges/a4a9b6e6-2420-4311-ae34-eba871f76b2e" target="_blank" rel="noopener" title="Verify: Certified Kubernetes Administrator">
+          <img src="assets/badges/lf-cka.webp" alt="Certified Kubernetes Administrator, Linux Foundation" width="96" height="96" loading="lazy">
+          <span class="bn">Certified Kubernetes Administrator</span><span class="bi">Linux Foundation · 2024</span>
+        </a>
+        <a class="badge" href="https://www.credly.com/badges/28bd7c0e-60a1-4f49-a26c-a62e2edca4a2" target="_blank" rel="noopener" title="Verify: CCNP Data Center">
+          <img src="assets/badges/cisco-ccnp-data-center.webp" alt="CCNP Data Center, Cisco" width="96" height="96" loading="lazy">
+          <span class="bn">CCNP Data Center</span><span class="bi">Cisco · 2025</span>
+        </a>
+        <a class="badge" href="https://www.credly.com/badges/02cb52e8-f5f5-4238-9379-492b78fe23b9" target="_blank" rel="noopener" title="Verify: Specialist: Data Center Networking Automation">
+          <img src="assets/badges/cisco-specialist-dc-networking-automation.webp" alt="Specialist: Data Center Networking Automation, Cisco" width="96" height="96" loading="lazy">
+          <span class="bn">Specialist: Data Center Networking Automation</span><span class="bi">Cisco · 2025</span>
+        </a>
+        <a class="badge" href="https://www.credly.com/badges/e82c6c9d-f227-4e92-bae9-a39687ec5d50" target="_blank" rel="noopener" title="Verify: Lab Champion: 20 labs">
+          <img src="assets/badges/isovalent-lab-champion-20.webp" alt="Lab Champion: 20 labs, Isovalent" width="96" height="96" loading="lazy">
+          <span class="bn">Lab Champion: 20 labs</span><span class="bi">Isovalent · 2024</span>
+        </a>
+        <a class="badge" href="https://www.credly.com/badges/ad08e82f-b6eb-46ac-884d-5f0dd3dcfd26" target="_blank" rel="noopener" title="Verify: Lab Champion: 10 labs">
+          <img src="assets/badges/isovalent-lab-champion-10.webp" alt="Lab Champion: 10 labs, Isovalent" width="96" height="96" loading="lazy">
+          <span class="bn">Lab Champion: 10 labs</span><span class="bi">Isovalent · 2024</span>
+        </a>
+        <a class="badge" href="https://www.credly.com/badges/d17d82a9-f9c3-42ee-9e60-c9c5fdf48f90" target="_blank" rel="noopener" title="Verify: CCNP Enterprise">
+          <img src="assets/badges/cisco-ccnp-enterprise.webp" alt="CCNP Enterprise, Cisco" width="96" height="96" loading="lazy">
+          <span class="bn">CCNP Enterprise</span><span class="bi">Cisco · 2015</span>
+        </a>
+        <a class="badge" href="https://www.credly.com/badges/4dce67a3-b29c-43a6-a42c-0ac1e35b4aed" target="_blank" rel="noopener" title="Verify: Specialist: Automation Core">
+          <img src="assets/badges/cisco-specialist-automation-core.webp" alt="Specialist: Automation Core, Cisco" width="96" height="96" loading="lazy">
+          <span class="bn">Specialist: Automation Core</span><span class="bi">Cisco · 2022</span>
+        </a>
+        <a class="badge" href="https://www.credly.com/badges/e253b0fa-0e58-457c-8980-17ebde694ffc" target="_blank" rel="noopener" title="Verify: Data Center Fabric Professional">
+          <img src="assets/badges/nokia-ncp-dcf.webp" alt="Data Center Fabric Professional, Nokia" width="96" height="96" loading="lazy">
+          <span class="bn">Data Center Fabric Professional</span><span class="bi">Nokia · 2021</span>
+        </a>
+      </div>
+      <p class="badges-all"><a href="https://www.credly.com/users/marlon-de-paz" target="_blank" rel="noopener">All credentials on Credly ↗</a></p>
       <p style="margin-top:16px"><b>Networks:</b> IP/MPLS, SR, BGP/EVPN, VXLAN, Cisco IOS-XR and NX-OS, Nokia SR Linux and SR OS, SONiC, containerlab<br>
         <b>Platforms:</b> Kubernetes, Cilium/eBPF, Go operators, Python, gNMI, Prometheus, OpenTelemetry, Grafana<br>
         <b>Agents:</b> LangGraph, AGNTCY (A2A, SLIM), MCP, LiteLLM, Claude Code</p>
